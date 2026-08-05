@@ -182,11 +182,10 @@ def build():
   .masthead .date-range b {{ color: var(--ink); font-weight: 600; }}
   nav {{ position: sticky; top: 0; z-index: 50; background: rgba(246,244,239,0.92);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
-    padding: 9px 16px; display: flex; justify-content: center; align-items: center; gap: 6px;
-    flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }}
-  nav::-webkit-scrollbar {{ display: none; }}
-  nav a {{ font-size: 13px; padding: 5px 13px; border-radius: 999px; color: var(--ink-2);
-    transition: all .2s; white-space: nowrap; flex-shrink: 0; }}
+    padding: 8px 12px; display: flex; justify-content: center; align-items: center; gap: 6px;
+    flex-wrap: wrap; }}
+  nav a {{ font-size: 12.5px; padding: 6px 12px; border-radius: 999px; color: var(--ink-2);
+    transition: all .2s; white-space: nowrap; }}
   nav a:hover {{ background: var(--ink); color: #fff; }}
   nav .refresh-btn {{ background: var(--ink); color: #fff; font-weight: 600; padding: 6px 15px;
     margin-left: 2px; display: inline-flex; align-items: center; gap: 5px; }}
@@ -267,23 +266,33 @@ def build():
   .modal .btn.ghost {{ background: var(--bg); color: var(--ink-2); }}
   .modal .btn:active {{ opacity: .75; transform: scale(.98); }}
   @media (max-width: 640px) {{
-    .masthead {{ padding: 26px 16px 18px; }}
-    .masthead h1 {{ font-size: 28px; letter-spacing: .08em; text-indent: .08em; }}
-    nav {{ padding: 8px 10px; justify-content: flex-start; }}
-    .wrap {{ padding: 0 12px 40px; }}
-    .hero {{ gap: 10px; margin-top: 14px; }}
-    .hero-card {{ padding: 20px 16px 16px; min-height: 210px; }}
-    .hero-card h2 {{ font-size: 18px; }}
-    section {{ margin-top: 28px; }}
-    .sec-head h2 {{ font-size: 18.5px; }}
-    .sec-head .no {{ font-size: 20px; }}
+    .masthead {{ padding: 20px 12px 14px; }}
+    .masthead h1 {{ font-size: 24px; letter-spacing: .08em; text-indent: .08em; }}
+    .masthead .flag {{ font-size: 9px; letter-spacing: 3px; padding: 2px 10px 2px 14px; margin-bottom: 8px; }}
+    .masthead .date-range {{ font-size: 11.5px; margin-top: 6px; }}
+    nav {{ padding: 7px 8px; justify-content: flex-start; gap: 5px; }}
+    .wrap {{ padding: 0 10px 30px; }}
+    .hero {{ gap: 8px; margin-top: 12px; }}
+    .hero-card {{ padding: 16px 14px 12px; min-height: 170px; }}
+    .hero-card h2 {{ font-size: 16px; margin-bottom: 6px; }}
+    .hero-card .meta {{ margin-top: 8px; font-size: 10.5px; }}
+    section {{ margin-top: 20px; }}
+    .sec-head {{ margin-bottom: 10px; padding-bottom: 6px; }}
+    .sec-head h2 {{ font-size: 17px; }}
+    .sec-head .no {{ font-size: 18px; }}
     .sec-head .en {{ display: none; }}
-    .grid {{ gap: 10px; }}
-    .card {{ padding: 13px 12px 10px; gap: 7px; border-radius: 11px; }}
-    .card h3 {{ font-size: 14px; }}
-    .flash-list {{ padding: 14px 16px; }}
-    .flash-list li {{ font-size: 12.5px; padding: 5px 0 5px 15px; }}
-    footer {{ margin-top: 38px; padding: 22px 14px 34px; }}
+    .grid {{ gap: 7px; }}
+    .card {{ padding: 10px 9px 8px; gap: 5px; border-radius: 9px; }}
+    .card h3 {{ font-size: 13px; line-height: 1.4; }}
+    .card .date {{ font-size: 10.5px; }}
+    .card .src {{ font-size: 10px; padding-top: 5px; }}
+    .tag {{ font-size: 9.5px; padding: 1px 7px; }}
+    .grid-break {{ font-size: 11px; margin: 6px 0 0; }}
+    .flash-list {{ padding: 10px 12px; }}
+    .flash-list li {{ font-size: 12px; padding: 4px 0 4px 13px; }}
+    .flash-list li::before {{ top: 10.5px; }}
+    footer {{ margin-top: 28px; padding: 18px 10px 28px; }}
+    footer p {{ font-size: 10.5px; }}
   }}
   footer {{ border-top: 3px double var(--ink); margin-top: 48px; padding: 24px 24px 40px;
     text-align: center; font-size: 11.5px; color: var(--ink-3); letter-spacing: 1px; }}
