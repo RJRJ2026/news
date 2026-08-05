@@ -157,11 +157,38 @@ def build():
 <style>
   :root {{
     color-scheme: light;
-    --bg: #f6f4ef; --card: #ffffff; --ink: #1c1917; --ink-2: #57534e; --ink-3: #a8a29e;
-    --line: #e7e2d9; --red: #c0272d; --blue: #2563eb; --teal: #0d9488;
-    --violet: #7c3aed; --amber: #d97706; --green: #16a34a;
+    /* 主题1 暖黄纸（默认） */
+    --bg: #f0e6cc; --card: #faf4e3; --ink: #3b3224; --ink-2: #665a42; --ink-3: #a29477;
+    --line: #ddd0b0; --accent: #8f7bc0; --accent2: #e07b2e;
+    --hero-bg: linear-gradient(135deg,#4a4032 0%,#6b5842 100%);
+    --hero-ink: #f7f1e2; --hero-sub: #d9cbb0;
+    --foreign-tag: #6b6353;
     --serif: "Noto Serif SC","Songti SC","STSong","SimSun",serif;
     --sans: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,"Segoe UI",sans-serif;
+  }}
+  [data-theme="2"] {{  /* 淡紫 */
+    color-scheme: light;
+    --bg: #efecf7; --card: #faf9ff; --ink: #332e45; --ink-2: #6d6587; --ink-3: #a9a2c2;
+    --line: #e0dcf0; --accent: #8b5cf6; --accent2: #e07b2e;
+    --hero-bg: linear-gradient(135deg,#3b3356 0%,#5b4d82 100%);
+    --hero-ink: #f4f1fb; --hero-sub: #cfc6e6;
+    --foreign-tag: #6f6890;
+  }}
+  [data-theme="3"] {{  /* 夜间 */
+    color-scheme: dark;
+    --bg: #191713; --card: #24211c; --ink: #ece5d6; --ink-2: #b3a88f; --ink-3: #7a715d;
+    --line: #38332a; --accent: #a78bfa; --accent2: #f59e0b;
+    --hero-bg: linear-gradient(135deg,#2b2619 0%,#4a3d22 100%);
+    --hero-ink: #f5efdf; --hero-sub: #c9bd9c;
+    --foreign-tag: #4a443a;
+  }}
+  [data-theme="4"] {{  /* 护眼绿 */
+    color-scheme: light;
+    --bg: #e6efe1; --card: #f6faf2; --ink: #2e3a30; --ink-2: #5d705f; --ink-3: #9aab9c;
+    --line: #d5e1cf; --accent: #4a9d68; --accent2: #e07b2e;
+    --hero-bg: linear-gradient(135deg,#2f4636 0%,#4c6b52 100%);
+    --hero-ink: #f2f7ee; --hero-sub: #c3d6c0;
+    --foreign-tag: #5c6e5f;
   }}
   * {{ margin: 0; padding: 0; box-sizing: border-box; }}
   html {{ scroll-behavior: smooth; }}
@@ -169,45 +196,49 @@ def build():
     -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }}
   a {{ color: inherit; text-decoration: none; }}
   .masthead {{ border-bottom: 3px double var(--ink); padding: 36px 24px 22px; text-align: center;
-    background: linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%); }}
-  .masthead .flag {{ display: inline-block; font-size: 11px; letter-spacing: 6px; color: var(--red);
-    border: 1px solid var(--red); border-radius: 999px; padding: 3px 14px 3px 20px; margin-bottom: 14px; }}
+    background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%); }}
+  .masthead .flag {{ display: inline-block; font-size: 11px; letter-spacing: 6px; color: var(--accent2);
+    border: 1px solid var(--accent2); border-radius: 999px; padding: 3px 14px 3px 20px; margin-bottom: 14px; }}
   .masthead h1 {{ font-family: var(--serif); font-size: clamp(30px,5.5vw,50px); font-weight: 900;
     letter-spacing: 0.12em; text-indent: 0.12em; }}
   .masthead .date-range {{ margin-top: 8px; font-size: 13px; color: var(--ink-2); letter-spacing: 2px; }}
   .masthead .date-range b {{ color: var(--ink); font-weight: 600; }}
-  nav {{ position: sticky; top: 0; z-index: 50; background: rgba(246,244,239,0.92);
+  nav {{ position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 92%, transparent);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
     padding: 8px 12px; display: flex; justify-content: center; align-items: center; gap: 6px;
     flex-wrap: wrap; }}
   nav a {{ font-size: 12.5px; padding: 6px 12px; border-radius: 999px; color: var(--ink-2);
     transition: all .2s; white-space: nowrap; }}
-  nav a:hover {{ background: var(--ink); color: #fff; }}
-  nav .refresh-btn {{ background: var(--ink); color: #fff; font-weight: 600; padding: 6px 15px;
+  nav a:hover {{ background: var(--ink); color: var(--bg); }}
+  nav .refresh-btn {{ background: var(--accent2); color: #fff; font-weight: 600; padding: 6px 15px;
     margin-left: 2px; display: inline-flex; align-items: center; gap: 5px; }}
-  nav .refresh-btn:hover {{ background: var(--red); }}
+  nav .refresh-btn:hover {{ background: var(--ink); color: var(--bg); }}
   nav .refresh-btn:active {{ transform: scale(0.96); }}
+  nav .theme-btn {{ background: var(--accent); color: #fff; font-weight: 600; padding: 6px 13px; }}
+  nav .theme-btn:hover {{ background: var(--ink); color: var(--bg); }}
   .wrap {{ max-width: 1280px; margin: 0 auto; padding: 0 20px 48px; }}
   .hero {{ display: grid; grid-template-columns: 1.15fr 1fr; gap: 14px; margin: 24px 0 6px; }}
   .hero-card {{ border-radius: 14px; overflow: hidden; padding: 24px 24px 20px;
     display: flex; flex-direction: column; justify-content: space-between; min-height: 240px; position: relative;
     transition: transform .25s ease, box-shadow .25s ease; }}
   .hero-card:hover {{ transform: translateY(-3px); }}
-  .hero-card.dark {{ background: linear-gradient(135deg,#231f1c 0%,#3a2f2a 100%); color: #f5f2ec;
-    box-shadow: 0 18px 40px -18px rgba(28,25,23,.55); }}
+  .hero-card.dark {{ background: var(--hero-bg); color: var(--hero-ink);
+    box-shadow: 0 18px 40px -18px rgba(0,0,0,.45); }}
   .hero-card.light {{ background: var(--card); border: 1px solid var(--line);
-    box-shadow: 0 18px 40px -22px rgba(28,25,23,.35); }}
+    box-shadow: 0 18px 40px -22px rgba(0,0,0,.25); }}
   .hero-card .kicker {{ font-size: 11px; letter-spacing: 3px; margin-bottom: 10px; }}
-  .hero-card.dark .kicker {{ color: #e8b4a0; }}
-  .hero-card.light .kicker {{ color: var(--red); }}
+  .hero-card.dark .kicker {{ color: var(--accent2); }}
+  .hero-card.light .kicker {{ color: var(--accent2); }}
   .hero-card h2 {{ font-family: var(--serif); font-size: clamp(19px,2.3vw,25px); font-weight: 800;
     line-height: 1.35; margin-bottom: 10px; }}
   .hero-card .meta {{ margin-top: 14px; font-size: 11.5px; opacity: .75; letter-spacing: 1px; }}
+  .hero-card.dark .meta {{ color: var(--hero-sub); }}
+  .hero-card.light .meta {{ color: var(--ink-3); }}
   .hero-card a.stretch::after {{ content: ""; position: absolute; inset: 0; }}
   section {{ margin-top: 34px; }}
   .sec-head {{ display: flex; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--ink);
     padding-bottom: 8px; margin-bottom: 16px; }}
-  .sec-head .no {{ font-family: var(--serif); font-size: 23px; font-weight: 900; line-height: 1; }}
+  .sec-head .no {{ font-family: var(--serif); font-size: 23px; font-weight: 900; line-height: 1; color: var(--accent); }}
   .sec-head h2 {{ font-family: var(--serif); font-size: 22px; font-weight: 800; }}
   .sec-head .en {{ font-size: 10px; letter-spacing: 3px; color: var(--ink-3); text-transform: uppercase; }}
   .grid {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }}
@@ -220,18 +251,9 @@ def build():
   .card {{ background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 15px 14px 12px;
     display: flex; flex-direction: column; gap: 8px;
     transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }}
-  .card:hover {{ transform: translateY(-2px); box-shadow: 0 12px 26px -16px rgba(28,25,23,.4); border-color: #d8d1c4; }}
-  .card .row {{ display: flex; align-items: center; gap: 7px; }}
-  .tag {{ font-size: 10.5px; padding: 1.5px 9px; border-radius: 999px; color: #fff;
-    font-weight: 600; letter-spacing: 1px; white-space: nowrap; }}
-  .tag.red {{ background: var(--red); }} .tag.blue {{ background: var(--blue); }}
-  .tag.teal {{ background: var(--teal); }} .tag.violet {{ background: var(--violet); }}
-  .tag.amber {{ background: var(--amber); }} .tag.green {{ background: var(--green); }}
-  .tag.foreign {{ background: #44403c; }}
-  .card .date {{ font-size: 11.5px; color: var(--ink-3); margin-left: auto; white-space: nowrap; }}
+  .card:hover {{ transform: translateY(-2px); box-shadow: 0 12px 26px -16px rgba(0,0,0,.35); border-color: var(--ink-3); }}
   .card h3 {{ font-size: 14.5px; font-weight: 700; line-height: 1.45; }}
-  .card h3 a:hover {{ color: var(--red); }}
-  .card p {{ font-size: 12.5px; color: var(--ink-2); flex: 1; line-height: 1.55; }}
+  .card h3 a:hover {{ color: var(--accent2); }}
   .card .src {{ font-size: 11px; color: var(--ink-3); border-top: 1px dashed var(--line); padding-top: 8px; }}
   .card .src .d {{ color: var(--ink-2); font-weight: 600; }}
   .flash-list {{ background: var(--card); border: 1px solid var(--line); border-radius: 12px;
@@ -241,12 +263,12 @@ def build():
   .flash-list li {{ list-style: none; font-size: 13px; color: var(--ink-2); padding: 6px 0 6px 16px;
     position: relative; break-inside: avoid; }}
   .flash-list li::before {{ content: ""; position: absolute; left: 0; top: 13.5px; width: 6px; height: 6px;
-    border-radius: 2px; background: var(--red); opacity: .75; }}
-  .modal-mask {{ position: fixed; inset: 0; background: rgba(28,25,23,0.55); backdrop-filter: blur(4px);
+    border-radius: 2px; background: var(--accent2); opacity: .85; }}
+  .modal-mask {{ position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
     display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }}
   .modal-mask.show {{ display: flex; }}
-  .modal {{ background: var(--card); border-radius: 18px; max-width: 430px; width: 100%;
-    padding: 28px 26px 22px; box-shadow: 0 30px 60px -20px rgba(28,25,23,0.5); animation: modalIn .25s ease; }}
+  .modal {{ background: var(--card); border: 1px solid var(--line); border-radius: 18px; max-width: 430px; width: 100%;
+    padding: 28px 26px 22px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5); animation: modalIn .25s ease; }}
   @keyframes modalIn {{ from {{ opacity: 0; transform: translateY(14px) scale(.97); }} to {{ opacity: 1; transform: none; }} }}
   .modal h3 {{ font-family: var(--serif); font-size: 20px; font-weight: 800; margin-bottom: 4px; }}
   .modal .sub {{ font-size: 12.5px; color: var(--ink-3); margin-bottom: 18px; }}
@@ -259,7 +281,7 @@ def build():
   .modal .actions {{ display: flex; gap: 10px; margin-top: 18px; }}
   .modal .btn {{ flex: 1; text-align: center; padding: 11px 0; border-radius: 10px; font-size: 14px;
     font-weight: 600; cursor: pointer; border: none; font-family: var(--sans); transition: opacity .2s; }}
-  .modal .btn.primary {{ background: var(--ink); color: #fff; }}
+  .modal .btn.primary {{ background: var(--accent2); color: #fff; }}
   .modal .btn.ghost {{ background: var(--bg); color: var(--ink-2); }}
   .modal .btn:active {{ opacity: .75; transform: scale(.98); }}
   @media (max-width: 640px) {{
@@ -281,10 +303,7 @@ def build():
     .grid {{ gap: 7px; }}
     .card {{ padding: 10px 9px 8px; gap: 5px; border-radius: 9px; }}
     .card h3 {{ font-size: 13px; line-height: 1.4; }}
-    .card .date {{ font-size: 10.5px; }}
     .card .src {{ font-size: 10px; padding-top: 5px; }}
-    .tag {{ font-size: 9.5px; padding: 1px 7px; }}
-    .grid-break {{ font-size: 11px; margin: 6px 0 0; }}
     .flash-list {{ padding: 10px 12px; }}
     .flash-list li {{ font-size: 12px; padding: 4px 0 4px 13px; }}
     .flash-list li::before {{ top: 10.5px; }}
@@ -316,6 +335,7 @@ def build():
   <a href="#sports">体育赛事</a>
   <a href="#auto">汽车动态</a>
   <a href="#flash">今日快讯</a>
+  <a class="theme-btn" href="javascript:void(0)" onclick="cycleTheme()" title="切换配色主题" id="themeBtn">🎨 暖黄</a>
   <a class="refresh-btn" href="javascript:void(0)" onclick="openRefresh()" title="检查新闻是否已更新">⟳ 刷新新闻</a>
 </nav>
 
@@ -369,6 +389,26 @@ def build():
 
 <script>
   var PAGE_VERSION = "{today}";
+  var THEMES = ['1','2','3','4'];
+  var THEME_NAMES = {{'1':'暖黄','2':'淡紫','3':'夜间','4':'护眼'}};
+  function applyTheme(t) {{
+    document.documentElement.setAttribute('data-theme', t);
+    var btn = document.getElementById('themeBtn');
+    if (btn) btn.textContent = '🎨 ' + THEME_NAMES[t];
+    try {{ localStorage.setItem('newsTheme', t); }} catch(e) {{}}
+  }}
+  function cycleTheme() {{
+    var cur = document.documentElement.getAttribute('data-theme') || '1';
+    var idx = THEMES.indexOf(cur);
+    var next = THEMES[(idx + 1) % THEMES.length];
+    applyTheme(next);
+  }}
+  (function() {{
+    var saved = '1';
+    try {{ saved = localStorage.getItem('newsTheme') || '1'; }} catch(e) {{}}
+    if (THEMES.indexOf(saved) < 0) saved = '1';
+    applyTheme(saved);
+  }})();
   function openRefresh() {{
     document.getElementById('refreshModal').classList.add('show');
     document.body.style.overflow = 'hidden';
