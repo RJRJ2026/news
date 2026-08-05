@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周新闻周刊 · 2026年8月第1期</title>
+<meta name="description" content="你的专属新闻周刊：每周一册，聚合本周国际、财经、科技、民生、体育、汽车大事。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+<meta name="theme-color" content="#f6f4ef">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="新闻周刊">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f6f4ef;
+    --card: #ffffff;
+    --ink: #1c1917;
+    --ink-2: #57534e;
+    --ink-3: #a8a29e;
+    --line: #e7e2d9;
+    --red: #c0272d;
+    --blue: #2563eb;
+    --teal: #0d9488;
+    --violet: #7c3aed;
+    --amber: #d97706;
+    --green: #16a34a;
+    --serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+    --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, "Segoe UI", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ===== 报头 ===== */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 36px 24px 22px;
+    text-align: center;
+    background: linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
+  }
+  .masthead .flag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 999px;
+    padding: 3px 14px 3px 20px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .masthead h1 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 5.5vw, 50px);
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-indent: 0.12em;
+  }
+  .masthead .date-range {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--ink-2);
+    letter-spacing: 2px;
+  }
+  .masthead .date-range b { color: var(--ink); font-weight: 600; }
+
+  /* ===== 导航 ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(246, 244, 239, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 9px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    font-size: 13px;
+    padding: 5px 13px;
+    border-radius: 999px;
+    color: var(--ink-2);
+    transition: all .2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  nav a:hover { background: var(--ink); color: #fff; }
+  nav .refresh-btn {
+    background: var(--ink);
+    color: #fff;
+    font-weight: 600;
+    padding: 6px 15px;
+    margin-left: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  nav .refresh-btn:hover { background: var(--red); }
+  nav .refresh-btn:active { transform: scale(0.96); }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px 48px; }
+
+  /* ===== 头条 Hero ===== */
+  .hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 14px; margin: 24px 0 6px; }
+  .hero-card {
+    border-radius: 14px;
+    overflow: hidden;
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 240px;
+    position: relative;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .hero-card:hover { transform: translateY(-3px); }
+  .hero-card.dark {
+    background: linear-gradient(135deg, #231f1c 0%, #3a2f2a 100%);
+    color: #f5f2ec;
+    box-shadow: 0 18px 40px -18px rgba(28,25,23,.55);
+  }
+  .hero-card.light {
+    background: var(--card);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 40px -22px rgba(28,25,23,.35);
+  }
+  .hero-card.light:hover { box-shadow: 0 24px 48px -20px rgba(28,25,23,.45); }
+  .hero-card .kicker { font-size: 11px; letter-spacing: 3px; margin-bottom: 10px; }
+  .hero-card.dark .kicker { color: #e8b4a0; }
+  .hero-card.light .kicker { color: var(--red); }
+  .hero-card h2 {
+    font-family: var(--serif);
+    font-size: clamp(19px, 2.3vw, 25px);
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+  .hero-card p { font-size: 13px; opacity: .92; max-width: 48ch; }
+  .hero-card.dark p { color: #d6cfc6; }
+  .hero-card.light p { color: var(--ink-2); }
+  .hero-card .meta { margin-top: 14px; font-size: 11.5px; opacity: .75; letter-spacing: 1px; }
+  .hero-card a.stretch::after { content: ""; position: absolute; inset: 0; }
+
+  /* ===== 区块 ===== */
+  section { margin-top: 34px; }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+  .sec-head .no {
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .sec-head h2 { font-family: var(--serif); font-size: 22px; font-weight: 800; }
+  .sec-head .en { font-size: 10px; letter-spacing: 3px; color: var(--ink-3); text-transform: uppercase; }
+
+  /* 密集网格：宽屏4列 */
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .grid-break {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--ink-2);
+  }
+  .grid-break::before, .grid-break::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  @media (max-width: 1120px) { .grid { grid-template-columns: repeat(3, 1fr); } .hero { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 15px 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -16px rgba(28,25,23,.4); border-color: #d8d1c4; }
+  .card .row { display: flex; align-items: center; gap: 7px; }
+  .tag {
+    font-size: 10.5px;
+    padding: 1.5px 9px;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .tag.red { background: var(--red); }
+  .tag.blue { background: var(--blue); }
+  .tag.teal { background: var(--teal); }
+  .tag.violet { background: var(--violet); }
+  .tag.amber { background: var(--amber); }
+  .tag.green { background: var(--green); }
+  .tag.foreign { background: #44403c; }
+  .card .date { font-size: 11.5px; color: var(--ink-3); margin-left: auto; white-space: nowrap; }
+  .card h3 { font-size: 14.5px; font-weight: 700; line-height: 1.45; }
+  .card h3 a:hover { color: var(--red); }
+  .card p { font-size: 12.5px; color: var(--ink-2); flex: 1; line-height: 1.55; }
+  .card .src { font-size: 11px; color: var(--ink-3); border-top: 1px dashed var(--line); padding-top: 8px; }
+
+  /* ===== 快讯 ===== */
+  .flash-list {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 22px;
+    columns: 3;
+    column-gap: 32px;
+  }
+  @media (max-width: 900px) { .flash-list { columns: 2; } }
+  @media (max-width: 560px) { .flash-list { columns: 1; } }
+  .flash-list li {
+    list-style: none;
+    font-size: 13px;
+    color: var(--ink-2);
+    padding: 6px 0 6px 16px;
+    position: relative;
+    break-inside: avoid;
+  }
+  .flash-list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 13.5px;
+    width: 6px; height: 6px;
+    border-radius: 2px;
+    background: var(--red);
+    opacity: .75;
+  }
+
+  /* ===== 刷新弹窗 ===== */
+  .modal-mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(28, 25, 23, 0.55);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+  }
+  .modal-mask.show { display: flex; }
+  .modal {
+    background: var(--card);
+    border-radius: 18px;
+    max-width: 430px;
+    width: 100%;
+    padding: 28px 26px 22px;
+    box-shadow: 0 30px 60px -20px rgba(28, 25, 23, 0.5);
+    animation: modalIn .25s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(14px) scale(.97); }
+    to { opacity: 1; transform: none; }
+  }
+  .modal h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .modal .sub { font-size: 12.5px; color: var(--ink-3); margin-bottom: 18px; }
+  .modal .item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+  }
+  .modal .item:last-of-type { border-bottom: 1px solid var(--line); }
+  .modal .ico {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    background: var(--bg);
+  }
+  .modal .item b { font-size: 14px; display: block; margin-bottom: 2px; }
+  .modal .item p { font-size: 12.5px; color: var(--ink-2); }
+  .modal .actions { display: flex; gap: 10px; margin-top: 18px; }
+  .modal .btn {
+    flex: 1;
+    text-align: center;
+    padding: 11px 0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-family: var(--sans);
+    transition: opacity .2s;
+  }
+  .modal .btn.primary { background: var(--ink); color: #fff; }
+  .modal .btn.ghost { background: var(--bg); color: var(--ink-2); }
+  .modal .btn:active { opacity: .75; transform: scale(.98); }
+
+  /* ===== 手机端优化 ===== */
+  @media (max-width: 640px) {
+    .masthead { padding: 26px 16px 18px; }
+    .masthead h1 { font-size: 28px; letter-spacing: .08em; text-indent: .08em; }
+    .masthead .flag { font-size: 9px; letter-spacing: 4px; padding: 2px 10px 2px 14px; }
+    nav { padding: 8px 10px; justify-content: flex-start; }
+    .wrap { padding: 0 12px 40px; }
+    .hero { gap: 10px; margin-top: 14px; }
+    .hero-card { padding: 20px 16px 16px; min-height: 210px; }
+    .hero-card h2 { font-size: 18px; }
+    section { margin-top: 28px; }
+    .sec-head { margin-bottom: 12px; }
+    .sec-head h2 { font-size: 18.5px; }
+    .sec-head .no { font-size: 20px; }
+    .sec-head .en { display: none; }
+    .grid { gap: 10px; }
+    .card { padding: 13px 12px 10px; gap: 7px; border-radius: 11px; }
+    .card h3 { font-size: 14px; }
+    .card p { font-size: 12px; }
+    .flash-list { padding: 14px 16px; }
+    .flash-list li { font-size: 12.5px; padding: 5px 0 5px 15px; }
+    .flash-list li::before { top: 12px; }
+    footer { margin-top: 38px; padding: 22px 14px 34px; }
+  }
+
+  /* ===== 页脚 ===== */
+  footer {
+    border-top: 3px double var(--ink);
+    margin-top: 48px;
+    padding: 24px 24px 40px;
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--ink-3);
+    letter-spacing: 1px;
+  }
+  footer .brand { font-family: var(--serif); font-size: 15px; color: var(--ink); font-weight: 700; letter-spacing: 4px; margin-bottom: 6px; }
+  footer p { line-height: 2; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="flag">WEEKLY DIGEST</span>
+  <h1>每周新闻周刊</h1>
+  <div class="date-range">2026年8月第1期 · <b>7月28日 — 8月5日</b> · 星期三</div>
+</header>
+
+<nav>
+  <a href="#top">本周头条</a>
+  <a href="#world">国际局势</a>
+  <a href="#mil">军事动态</a>
+  <a href="#finance">财经商业</a>
+  <a href="#tech">科技前沿</a>
+  <a href="#life">社会民生</a>
+  <a href="#sports">体育赛事</a>
+  <a href="#auto">汽车动态</a>
+  <a href="#flash">本周快讯</a>
+  <a class="refresh-btn" href="javascript:void(0)" onclick="openRefresh()" title="了解如何刷新新闻">⟳ 刷新新闻</a>
+</nav>
+
+<main class="wrap" id="top">
+
+  <!-- ============ 头条 ============ -->
+  <div class="hero">
+    <div class="hero-card dark">
+      <div>
+        <div class="kicker">头 条 故 事</div>
+        <h2>美伊接近达成开放霍尔木兹海峡临时协议，国际油价跳水</h2>
+        <p>据 Axios 援引消息人士，美国、伊朗与阿曼接近达成 60 天可延长的临时协议：期间不收取通行费，各方承诺 30 天内清理海峡水雷。受此影响 WTI 原油跌 5.7% 至 75.77 美元/桶，布伦特跌 5.3%。此前特朗普刚宣布取消对伊朗的大规模军事打击。</p>
+      </div>
+      <div class="meta">国际 · 08.05 · 俄罗斯卫星通讯社</div>
+      <a class="stretch" href="https://cdn.sputniknews.cn/20260805/1072641265.html" target="_blank" rel="noopener"></a>
+    </div>
+    <div class="hero-card light">
+      <div>
+        <div class="kicker">市 场 震 动</div>
+        <h2>OpenAI 大幅降价引爆 AI 价格战，全球科技股巨震</h2>
+        <p>OpenAI 周末对 GPT-5.6 中低端模型降价最多 80%，引发对算力需求增速放缓的担忧：8 月 3 日韩国 KOSPI 暴跌 5.13%、三星跌 8.95%，A 股科创50 跌 5.08%。市场正从"拼算力扩张"转向"拼 AI 投资回报"。</p>
+      </div>
+      <div class="meta">科技 · 08.03 · 和讯网</div>
+      <a class="stretch" href="https://m.hexun.com/stock/2026-08-04/224759176.html" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+
+  <!-- ============ 本周头条 ============ -->
+  <section id="topstories">
+    <div class="sec-head">
+      <span class="no" style="color:var(--red)">壹</span>
+      <h2>本周头条</h2>
+      <span class="en">Top Stories</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="row"><span class="tag red">头条</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.jiemian.com/article/14875707.html" target="_blank" rel="noopener">SpaceX 上市后首份财报：营收 78 亿美元同比 +92%，星链成唯一盈利板块</a></h3>
+        <p>星链营收 42.9 亿美元、运营利润 16.6 亿美元；但 AI 资本开支高达 158 亿美元，财报后股价盘后跌超 8%。</p>
+        <div class="src">来源：界面新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">头条</span><span class="date">08.05</span></div>
+        <h3><a href="https://m.chinanews.com/wap/detail/chs/zw/10672376.shtml" target="_blank" rel="noopener">中方宣布对美系列涉华消极措施实施反制</a></h3>
+        <p>商务部宣布加强对无人机及关键零部件对美出口管制、将 6 家美国实体列入反制清单，并对进口打印复印办公设备发起国家安全调查。</p>
+        <div class="src">来源：中国新闻网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">头条</span><span class="date">07.31</span></div>
+        <h3><a href="https://www.cnfin.com/gs-lb/detail/20260802/4449598_1.html" target="_blank" rel="noopener">国常会核准四个核电项目，总投资超 1700 亿元</a></h3>
+        <p>辽宁庄河一期、浙江金七门二期、广东太平岭三期、山东莱阳一期共 8 台新机组获批；同时审议通过住房公积金条例修改决定草案。</p>
+        <div class="src">来源：新华财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">头条</span><span class="date">08.01</span></div>
+        <h3><a href="https://news.cri.cn/20260802/96a35e5c-b77f-4c27-bbbc-129f125ebbcb.html" target="_blank" rel="noopener">特朗普宣布取消对伊朗军事打击，称各方已初步达成协议框架</a></h3>
+        <p>特朗普称原定行动"二战以来前所未有"，因伊朗等中东国家请求暂缓而叫停；伊朗外长警告美方不要"冒险行动"。</p>
+        <div class="src">来源：国际在线</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 国际 ============ -->
+  <section id="world">
+    <div class="sec-head">
+      <span class="no" style="color:var(--blue)">贰</span>
+      <h2>国际局势</h2>
+      <span class="en">World</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="row"><span class="tag blue">国际</span><span class="date">08.05</span></div>
+        <h3><a href="http://hkcna.hk/h5/docDetail.jsp?id=101387431&channel=4657" target="_blank" rel="noopener">霍尔木兹协议进入具体磋商：通行规则、先让步方、通行费成焦点</a></h3>
+        <p>美财长贝森特称有望一两天内达成通航协议；伊朗坚持先解除封锁与恢复石油出口，美方要求伊先停止袭击商船。</p>
+        <div class="src">来源：香港中通社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">国际</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.zaobao.com/news/world/story20260804-9469983?ref=article-sidebar-global-realtime" target="_blank" rel="noopener">谈判期间霍尔木兹海峡货船遭不明飞行物击中，一海员失踪</a></h3>
+        <p>事发当天通过海峡的船只仅 6 艘（平时约 100 艘），许多船只改走阿曼南部航线并关闭应答器。</p>
+        <div class="src">来源：联合早报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">国际</span><span class="date">08.04</span></div>
+        <h3><a href="http://world.people.com.cn/n1/2026/0804/c1002-40773492.html" target="_blank" rel="noopener">以军空袭加沙打死两名哈马斯指挥官，停火局面依然脆弱</a></h3>
+        <p>卡塔尔、埃及、土耳其同日发表联合声明，谴责以色列持续违反停火协议、袭击卫生设施造成平民伤亡。</p>
+        <div class="src">来源：人民网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">国际</span><span class="date">08.04</span></div>
+        <h3><a href="https://m-cn.yna.co.kr/view/ACK20260804003100881" target="_blank" rel="noopener">日本《防卫白皮书》连续 22 年主张独岛主权，韩国强烈抗议</a></h3>
+        <p>韩国外交部召见日本驻韩使馆总括公使，国防部亦召见日方防卫驻在官，敦促日方立即撤回主张。</p>
+        <div class="src">来源：韩联社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">国际</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.financialnews.com.cn/2026-08/05/content_454330.html" target="_blank" rel="noopener">极端高温肆虐日韩欧：韩国 15 处超 40℃，欧洲野火过火面积激增</a></h3>
+        <p>日本熊本首破 40℃ 纪录；西班牙山火过火面积约为去年同期 5.6 倍；上半年全球自然灾害经济损失约 1120 亿美元。</p>
+        <div class="src">来源：中国金融新闻网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">国际</span><span class="date">07.31</span></div>
+        <h3><a href="https://www.cnfin.com/gs-lb/detail/20260802/4449598_1.html" target="_blank" rel="noopener">美日韩联合干预汇市：日元单周涨近 4%，美元指数跌破 100</a></h3>
+        <p>美国财政部罕见直接参与日元干预（近 30 年首次），日韩同步抛售美元；市场解读为针对 AI 产业链盟友资产的"救市"行动。</p>
+        <div class="src">来源：新华财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">外交</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.yicai.com/news/102778984.html" target="_blank" rel="noopener">王毅访问印度，中印边界问题特别代表第 24 次会晤举行</a></h3>
+        <p>外交部介绍，中方愿以此访为契机落实两国领导人共识，推动中印关系健康稳定发展；王毅随后还将访问阿富汗、巴基斯坦。</p>
+        <div class="src">来源：第一财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">外交</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.fmprc.gov.cn/wjbxw_new/202608/t20260803_11997472.shtml" target="_blank" rel="noopener">外交部副部长苗得雨会见肯尼亚常务副外长，深化中非合作</a></h3>
+        <p>双方就落实两国元首共识、中非合作论坛北京峰会成果、深化经贸及基础设施合作等交换意见；肯方坚定恪守一个中国原则。</p>
+        <div class="src">来源：外交部网站</div>
+      </article>
+      <div class="grid-break">🌍 国外媒体视角</div>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.thenews.pk/print/1429933-britain-could-face-food-shortages-as-drought-continues-farmers-warn" target="_blank" rel="noopener">英国农民警告：持续干旱或致食品短缺，麦子只有正常高度一半</a></h3>
+        <p>五年内第三次干旱，英格兰八个地区发布高温警报，正经历有记录以来最早收成；农民联合会呼吁首相为农业蓄水提供税收优惠。</p>
+        <div class="src">来源：路透社 · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.lbc.co.uk/article/3080e36c035c4ef5880ee8a43958c721-5HjdfYz_2/" target="_blank" rel="noopener">特朗普称英国"破产"，劝其开发北海石油"金矿"</a></h3>
+        <p>特朗普称"非常欣赏"英国首相伯纳姆；英国财长已下令各部削减预算以筹措新支出，北海油气咨询将持续至8月中旬。</p>
+        <div class="src">来源：LBC · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.mediaite.com/media/tv/trump-trashes-abc-to-reporters-face-snipes-that-broadcaster-hes-suing-for-10b-is-better/" target="_blank" rel="noopener">特朗普当面贬损 ABC，称正起诉的 BBC"更好"</a></h3>
+        <p>特朗普向 ABC 记者表示更喜欢 BBC——尽管他正以100亿美元起诉 BBC，起因是2024年1月6日纪录片被指剪辑有误。</p>
+        <div class="src">来源：Mediaite · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">欧</span><span class="date">08.03</span></div>
+        <h3><a href="https://bbc.bm/eu-must-do-more-to-strengthen-borders-von-der-leyen-tells-spanish-pm-in-letter-seen-by-reuters/" target="_blank" rel="noopener">冯德莱恩致信西班牙首相：欧盟须加强边境管控</a></h3>
+        <p>在休达移民潮致至少67人死亡后，欧盟委员会主席建议完善预警系统并加大对摩洛哥的支持力度。</p>
+        <div class="src">来源：路透社 · 欧盟</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">欧</span><span class="date">08.03</span></div>
+        <h3><a href="https://en.parapolitika.gr/world/265028/helicopter-crash-in-psatha-greece-top-story-in-global-media-photos/" target="_blank" rel="noopener">希腊两架消防直升机相撞坠毁，2名机组人员遇难</a></h3>
+        <p>两架灭火直升机在普萨萨上空相撞，机上4人2死2伤，BBC、路透等全球媒体滚动报道。</p>
+        <div class="src">来源：Parapolitika · 希腊</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">卡</span><span class="date">08.04</span></div>
+        <h3><a href="https://en.webangah.ir/2026-08-04/news=382988/" target="_blank" rel="noopener">特朗普与卡塔尔埃米尔通话，讨论霍尔木兹海峡局势</a></h3>
+        <p>埃米尔塔米姆向特朗普介绍多哈为美伊降温所做努力，强调通过持续对话维护地区稳定。</p>
+        <div class="src">来源：半岛电视台 · 卡塔尔</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">卡</span><span class="date">08.03</span></div>
+        <h3><a href="https://en.webangah.ir/2026-08-03/news=382836/" target="_blank" rel="noopener">卡塔尔外长与海湾五国外长密集磋商促降温</a></h3>
+        <p>穆罕默德·本·阿卜杜拉赫曼分别与沙特、阿曼、阿联酋、科威特、巴林外长通话，重申各方须恪守6月20日谅解备忘录，保障海峡自由航行。</p>
+        <div class="src">来源：半岛电视台 · 卡塔尔</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">卡</span><span class="date">08.04</span></div>
+        <h3><a href="https://en.mehrnews.com/news/246759/Qatar-hopeful-US-Iran-deal-be-reached-in-coming-hours-days" target="_blank" rel="noopener">卡塔尔外交部：希望数小时或数日内达成美伊协议</a></h3>
+        <p>发言人安萨里表示支持阿曼斡旋，调解方正在交换协议草案，目标聚焦"避免升级、重开海峡、重启外交"。</p>
+        <div class="src">来源：半岛电视台 · 卡塔尔</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">卡</span><span class="date">08.04</span></div>
+        <h3><a href="https://en.webangah.ir/2026-08-04/news=382872/" target="_blank" rel="noopener">卡塔尔、埃及、土耳其谴责以色列持续违反加沙停火</a></h3>
+        <p>三国联合声明抨击以军袭击卫生设施致平民伤亡，呼吁国际社会施压以色列遵守协议，警告违约危及停火第二阶段落实。</p>
+        <div class="src">来源：半岛电视台 · 卡塔尔</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.02</span></div>
+        <h3><a href="https://www.globaltimes.cn/page/202608/1367359.shtml" target="_blank" rel="noopener">民调：76% 日本民众支持坚持"无核三原则"</a></h3>
+        <p>77% 反对与美国"核共享"；53% 认为应维持或重新审议解除致命武器出口禁令的决定。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.05</span></div>
+        <h3><a href="https://m-en.yna.co.kr/view/AEN20260805003600315" target="_blank" rel="noopener">李在明："和平是粮食、是经济"，坚持对朝和平共存</a></h3>
+        <p>韩国总统在动荡的全球秩序中强调维护半岛和平稳定，并指示统一部继续推动与朝鲜的和平共存努力。</p>
+        <div class="src">来源：韩联社 · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.03</span></div>
+        <h3><a href="http://www.china.org.cn/world/Off_the_Wire/2026-08/03/content_118630665.shtml" target="_blank" rel="noopener">日美15年来首次联合干预汇市，日元一度回升至157区间</a></h3>
+        <p>日本财务大臣加藤宣布，纽约市场联合行动买入日元；此前日元7月23日跌至163.99创1986年以来新低。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 军事 ============ -->
+  <section id="mil">
+    <div class="sec-head">
+      <span class="no" style="color:var(--red)">叁</span>
+      <h2>军事动态</h2>
+      <span class="en">Military</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="row"><span class="tag red">演训</span><span class="date">08.01</span></div>
+        <h3><a href="https://3w.huanqiu.com/a/5e93e2/4ScNcbly3Qf?agt=103" target="_blank" rel="noopener">南部战区"八一"黄岩岛海空联合演训：检验立体两栖战力</a></h3>
+        <p>重点演练侦察预警、威慑巡航、海空管制、联合突击等科目；专家称立体两栖战力震慑侵权挑衅，释放明确信号。</p>
+        <div class="src">来源：环球网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">装备</span><span class="date">08.03</span></div>
+        <h3><a href="https://k.sina.cn/article_1893892941_m70e2834d0330228h0.html?from=mil" target="_blank" rel="noopener">轰-6K"战神"黄岩岛挂弹飞行：鹰击-12 超音速反舰导弹亮相</a></h3>
+        <p>鹰击-12 射程四五百公里完全覆盖黄岩岛海域，末端突防速度可达四五马赫，能重创甚至瘫痪万吨级大型水面舰艇。</p>
+        <div class="src">来源：新浪军事</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">两栖</span><span class="date">08.03</span></div>
+        <h3><a href="http://rss2.bjd.com.cn/content/s6a6f35ede4b03fa51a8262a7.html" target="_blank" rel="noopener">071 舰 + 直-20J：我军立体两栖作战体系实现成熟协同</a></h3>
+        <p>祁连山舰与直-20J、直-8C、野马气垫登陆艇配合演练，舰面航空、空中垂直投送、海上重装抢滩三大链路成型；直-20J 首次现身黄岩岛上空。</p>
+        <div class="src">来源：北京日报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">海警</span><span class="date">08.01</span></div>
+        <h3><a href="https://www.news.cn/20260802/206d796a8d7c4177b9ae0cf6ec8efa51/c.html" target="_blank" rel="noopener">海空联动：中国海警黄岩岛海域维权执法管控演练</a></h3>
+        <p>重点演练临检拿捕、拦阻冲闯、强制拖离等执法行动，完全模拟真实场景；专家称侵权外方船只能力不及演训中"蓝方"。</p>
+        <div class="src">来源：新华社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">法治</span><span class="date">08.01</span></div>
+        <h3><a href="https://mkan.china.com/article/6485418.html" target="_blank" rel="noopener">《黄岩岛国家级自然保护区管理办法》印发，军警民"三箭齐发"</a></h3>
+        <p>自然资源部等多部门联合收紧对珍稀物种与生态系统的保护；8月1日当天军事演训、海警演练、行政管理办法同步落地。</p>
+        <div class="src">来源：中华网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">外交</span><span class="date">08.02</span></div>
+        <h3><a href="http://m.yunnan.cn/system/2026/08/02/034106280.shtml" target="_blank" rel="noopener">海军 83 舰编队抵达印尼泗水，开启 4 天友好访问</a></h3>
+        <p>编队停靠丹戎佩拉港开展友好访问，深化中印尼两军互信与合作。</p>
+        <div class="src">来源：云南网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">回应</span><span class="date">08.04</span></div>
+        <h3><a href="https://china.kyodonews.net/articles/-/13789" target="_blank" rel="noopener">国防部回应日本《防卫白皮书》：敦促日方深刻反省侵略历史</a></h3>
+        <p>针对日方诬称中国军事动向是"前所未有的最大战略挑战"，国防部发言人敦促日方停止干涉中国内政；白皮书还对中方太平洋活动表示关切。</p>
+        <div class="src">来源：国防部</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag red">南海</span><span class="date">08.02</span></div>
+        <h3><a href="https://mil.ifeng.com/c/8vHThcpVEYK" target="_blank" rel="noopener">菲向联合国交存黄岩岛"官方海图"，中方：划设"领海基线"非法无效</a></h3>
+        <p>菲外交部声明称海图标示黄岩岛基线及12海里领海；中方强调黄岩岛是中国固有领土，菲方有关主张非法无效。</p>
+        <div class="src">来源：凤凰网军事</div>
+      </article>
+      <div class="grid-break">🌍 国外媒体视角</div>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.03</span></div>
+        <h3><a href="http://www.news.cn/world/20260803/93c4bac1c020477198659a820f7000ab/c.html" target="_blank" rel="noopener">韩美联演险误击：韩军差点击落美军无人机，军团长停职</a></h3>
+        <p>7月30日韩美联合军演中，韩军将美军侦察无人机误判为朝鲜目标，启动"丹顶鹤"防空系统准备拦截；调查认定系双方沟通失误。</p>
+        <div class="src">来源：新华社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">乌</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.sohu.com/a/1057239540_122415062" target="_blank" rel="noopener">泽连斯基白宫会晤：称俄军阵亡破 13 万，俄拟引 3 万朝军</a></h3>
+        <p>泽连斯基称俄方正筹备引入3万名朝鲜军人，叠加现有朝军总规模将达4.4万，并将输送大批导弹发射装置；美乌关系明显回暖。</p>
+        <div class="src">来源：搜狐国际</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">俄</span><span class="date">08.01</span></div>
+        <h3><a href="https://sputniknews.cn/20260804/1072622762.html" target="_blank" rel="noopener">普京落地新军力部署：扩充军事工程部队，收缩进攻强化防御</a></h3>
+        <p>为保障9月杜马选举稳定（新增四州首次参与投票），俄军主动收缩进攻、强化防御，重点扩充军事工程部队。</p>
+        <div class="src">来源：俄罗斯卫星通讯社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">朝</span><span class="date">08.03</span></div>
+        <h3><a href="https://sputniknews.cn/20260804/1072622762.html" target="_blank" rel="noopener">朝中社批美日韩"三位一体"威胁固化为亚太新安全危机</a></h3>
+        <p>点名"环太平洋-2026"军演（兵力超3万、舰艇30余艘），指出韩国首任联合海军构成军司令、日本任联合机动部队副司令；朝鲜称将以"新水平的遏制力"应对。</p>
+        <div class="src">来源：朝中社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">朝</span><span class="date">08.05</span></div>
+        <h3><a href="https://sputniknews.cn/20260805/1072638860.html" target="_blank" rel="noopener">金与正谴责日本加速先发制人打击建设，称将"追加军事选项"</a></h3>
+        <p>朝方批评日本试射"战斧"巡航导弹、部署12式导弹及25式高速滑翔弹等动作，并称美国是日本军事大国化的幕后推手。</p>
+        <div class="src">来源：朝鲜中央通讯社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.04</span></div>
+        <h3><a href="https://china.kyodonews.net/articles/-/13789" target="_blank" rel="noopener">日本新版《防卫白皮书》首设"新型作战方式"章节，聚焦无人机与 AI</a></h3>
+        <p>白皮书首次单设章节关注无人机与AI的军事应用；同时列举朝鲜向俄提供弹道导弹、弹药并派遣士兵等关切。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.chosun.com/international/international_general/2026/08/05/ETVPFAGMHVAADOQIGMDKMIHI2A/" target="_blank" rel="noopener">联合国军副司令警告：东北亚若再冲突将是"难以承受的灾难"</a></h3>
+        <p>澳大利亚籍中将斯科特·温特称全球安全环境处于数十年来最不稳定状态，欧洲、中东战事未歇，必须扩充东北亚威慑力。</p>
+        <div class="src">来源：朝鲜日报 · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.03</span></div>
+        <h3><a href="https://sputniknews.cn/20260804/1072622762.html" target="_blank" rel="noopener">美国被曝策划在韩部署"堤丰"中程导弹系统</a></h3>
+        <p>朝中社军事评论员文章指出，美国正策划在韩国部署"堤丰"中程导弹系统，强化美日韩作战互操作性。</p>
+        <div class="src">来源：朝中社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">乌</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.sohu.com/a/1057239540_122415062" target="_blank" rel="noopener">爱国者导弹本土生产获实质进展，美乌军工合作加深</a></h3>
+        <p>泽连斯基访美期间，爱国者防空导弹本土生产许可取得实质性进展，乌克兰防空自主能力将显著提升。</p>
+        <div class="src">来源：搜狐国际</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">朝</span><span class="date">08.03</span></div>
+        <h3><a href="https://sputniknews.cn/20260804/1072622762.html" target="_blank" rel="noopener">朝鲜向俄提供弹道导弹与弹药，俄向朝转移核导技术</a></h3>
+        <p>日本防卫白皮书与联合国军司令部高层均确认朝俄军事合作加深：朝军积累实战经验，俄方转移核导核心技术。</p>
+        <div class="src">来源：朝中社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.03</span></div>
+        <h3><a href="https://news.qq.com/rain/a/20260803A09AOD00" target="_blank" rel="noopener">韩军第一军团被曝擅自调整警戒规范，K6 重机枪不装实弹</a></h3>
+        <p>调查发现涉事军团此前停装K6重机枪实弹、警戒规范被擅自调整；陆军地面作战司令部正对全体前沿部队警戒勤务进行普查。</p>
+        <div class="src">来源：新华社</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.04</span></div>
+        <h3><a href="https://china.kyodonews.net/articles/-/13789" target="_blank" rel="noopener">日《防卫白皮书》关切中国军方太平洋活动扩大</a></h3>
+        <p>白皮书对解放军在太平洋的活动扩大表示关切，称中国军事动向是"前所未有的最大战略挑战"，中方已予以驳斥。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 财经 ============ -->
+  <section id="finance">
+    <div class="sec-head">
+      <span class="no" style="color:var(--teal)">肆</span>
+      <h2>财经商业</h2>
+      <span class="en">Finance</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="row"><span class="tag teal">宏观</span><span class="date">07.30</span></div>
+        <h3><a href="https://stcn.com/article/detail/4054934.html" target="_blank" rel="noopener">中央政治局会议部署下半年经济：扩大内需、深入实施"人工智能+"行动</a></h3>
+        <p>会议强调挖掘服务消费潜力、发展智能经济新形态；机构解读认为政策节奏或为结构工具先行、总量工具相机而动。</p>
+        <div class="src">来源：证券时报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">宏观</span><span class="date">08.01</span></div>
+        <h3><a href="https://m.21jingji.com/article/20260803/herald/16049eedf56c7fca604b90b92692b574.html" target="_blank" rel="noopener">央行下半年工作会议：继续适度宽松货币政策，5 日开展 5000 亿元买断式逆回购</a></h3>
+        <p>央行明确保持流动性充裕、稳妥化解重点领域风险，并发挥好支持资本市场货币政策工具的作用。</p>
+        <div class="src">来源：21世纪经济报道</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">A股</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.sohu.com/a/1058898100_116062" target="_blank" rel="noopener">"惊魂七月"：两融余额单月蒸发 4091 亿元，ETF 逆势净流入近 4800 亿</a></h3>
+        <p>7 月两融余额从约 3 万亿降至 2.61 万亿；长鑫科技上市首日大涨 465%，成交额刷新 A 股个股单日纪录。</p>
+        <div class="src">来源：搜狐财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">美股</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.yicai.com/epaper/pc/202608/05/content_53271.html" target="_blank" rel="noopener">美股"财报杀"：苹果单日蒸发 3580 亿美元让出全球第一，亚马逊跻身 3 万亿俱乐部</a></h3>
+        <p>苹果营收增 16% 但指引低于预期；英伟达重返全球市值第一；亚马逊 AWS 增速创 18 个季度最快。</p>
+        <div class="src">来源：第一财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">AI资本</span><span class="date">08.04</span></div>
+        <h3><a href="https://stcn.com/article/detail/4054301.html" target="_blank" rel="noopener">四大云巨头 AI 资本开支升至约 7300 亿美元，进入"回报验证期"</a></h3>
+        <p>微软、亚马逊、Alphabet、Meta 今年 AI 基建开支同比增 77%；Alphabet 上市以来首次单季自由现金流转负。</p>
+        <div class="src">来源：证券时报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">汇市</span><span class="date">07.31</span></div>
+        <h3><a href="https://www.cnfin.com/gs-lb/detail/20260802/4449598_1.html" target="_blank" rel="noopener">美联储连续第五次按兵不动，3 名委员反对要求加息</a></h3>
+        <p>联邦基金利率维持 3.5%-3.75%；美国二季度 GDP 环比年率仅增 1.5%，市场对 9 月加息概率定价回落至 68%。</p>
+        <div class="src">来源：新华财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">市场</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.stcn.com/article/detail/4058742.html" target="_blank" rel="noopener">港交所将推出 5 年期国债期货，深化香港离岸人民币市场</a></h3>
+        <p>香港交易所宣布推出5年期中国国债期货，进一步丰富离岸人民币利率风险管理工具。</p>
+        <div class="src">来源：证券时报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag teal">监管</span><span class="date">08.04</span></div>
+        <h3><a href="https://stcn.com/article/detail/4054934.html" target="_blank" rel="noopener">证监会集中发布 6 份监管措施：三家券商因投行业务内控被责令改正</a></h3>
+        <p>国元证券、甬兴证券、国融证券因投行业务内控问题被采取责令改正措施，相关责任人被出具警示函。</p>
+        <div class="src">来源：证券时报</div>
+      </article>
+      <div class="grid-break">🌍 国外媒体视角</div>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.02</span></div>
+        <h3><a href="https://www.marketscreener.com/news/astrazeneca-holds-talks-with-bristol-myers-squibb-on-400-billion-megadeal-ft-reports-ce7f50d8df80f025" target="_blank" rel="noopener">FT：阿斯利康洽购百时美施贵宝，潜在交易近 4000 亿美元</a></h3>
+        <p>若达成将跻身全球第四大药企，但肿瘤管线高度重叠，美英欧反垄断审查或成最大障碍；周一股价跌 6.2%。</p>
+        <div class="src">来源：金融时报 · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.04</span></div>
+        <h3><a href="https://bbc.bm/ftse-100-slips-as-astrazeneca-drops-on-bristol-myers-merger-talks" target="_blank" rel="noopener">阿斯利康领跌，富时 100 承压回落</a></h3>
+        <p>合并谈判引发投资者对交易逻辑的质疑；周二富时100转涨至10886.98点，受 BP 业绩翻倍与矿业股上涨支撑。</p>
+        <div class="src">来源：BBC · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.bradenton.com/news/business/article316758715.html" target="_blank" rel="noopener">AI 业绩与霍尔木兹希望推动道指、标普创历史新高</a></h3>
+        <p>Palantir 上调指引大涨约 30%，卡特彼勒涨 6%；道指收报 54175 点首破 5.4 万关口，标普 500 涨 1.9%。</p>
+        <div class="src">来源：路透社 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.zawya.com/en/business/americas/amazon-enters-3trln-club-as-ai-cloud-growth-power-rally-419240" target="_blank" rel="noopener">亚马逊市值首破 3 万亿美元，AI 与云增长推动涨势</a></h3>
+        <p>继强劲财报后股价延续涨势；AWS 二季度收入同比增长 37% 至 422 亿美元，创 18 个季度最快增速。</p>
+        <div class="src">来源：路透社 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.04</span></div>
+        <h3><a href="https://bbc.bm/ftse-100-gains-as-bp-and-miners-advance" target="_blank" rel="noopener">BP 二季度利润翻倍至 57.3 亿美元，远超预期</a></h3>
+        <p>利润较去年同期增长逾一倍；矿业股普涨，嘉能可涨 4.1%、力拓涨 2.7%，铜价创两个月新高。</p>
+        <div class="src">来源：BBC · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.04</span></div>
+        <h3><a href="https://m-en.yna.co.kr/view/AEN20260804008700320" target="_blank" rel="noopener">韩孟就全面经济伙伴协定（CEPA）达成原则协议</a></h3>
+        <p>韩国将对孟加拉国出口的方便面、速溶咖啡等取消关税，孟方取消柴油、汽车成套件等关税。</p>
+        <div class="src">来源：韩联社 · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.koreatimes.co.kr/economy/20260805/seoul-shares-open-sharply-higher-amid-eased-woes-over-ai-hormuz-deal-hopes" target="_blank" rel="noopener">首尔股市大涨 4.7%，三星、SK 海力士领涨</a></h3>
+        <p>KOSPI 收报 6657.98 点，三星电子涨 4.38%、SK 海力士暴涨 7.29%，韩元报 1429.2 兑 1 美元。</p>
+        <div class="src">来源：韩国时报 · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.04</span></div>
+        <h3><a href="https://m-en.yna.co.kr/view/AEN20260804002300320" target="_blank" rel="noopener">韩国 7 月 CPI 同比涨 2.8%，三个月来首回落至 3% 下方</a></h3>
+        <p>油价企稳与政府油价上限推动回落；央行预计8月受基数效应影响将再度回升，核心通胀升至2.6%。</p>
+        <div class="src">来源：韩联社 · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.04</span></div>
+        <h3><a href="https://en.infomaxai.com/news/articleView.html?idxno=133743" target="_blank" rel="noopener">韩国央行设资产代币化部门，启动国债代币化试点</a></h3>
+        <p>"汉江项目"下拟明年开展与批发型央行数字货币联动的国债代币化试点。</p>
+        <div class="src">来源：韩联社 Infomax · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">澳</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.abc.net.au./listen/programs/abc-news-top-stories/fuel-price-jumps-as-excise-cut-comes-to-an-end/106989014" target="_blank" rel="noopener">澳洲燃油税减免到期，油价跳升至约 2 澳元/升</a></h3>
+        <p>4月为应对油价危机推出的32分/升减免到期；柴油涨逾60分，财长查默斯排除延续减免可能。</p>
+        <div class="src">来源：澳洲广播公司 · 澳大利亚</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">澳</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.indailysa.com.au/news/just-in/2026/08/03/servos-warned-with-100m-fine-as-fuel-prices-to-spike" target="_blank" rel="noopener">ACCC 紧盯油价，哄抬价格最高罚 1 亿澳元</a></h3>
+        <p>财长致函消费者监管机构要求加强油价监控，警告加油站与供应商"将像老鹰一样被盯着"。</p>
+        <div class="src">来源：InDaily · 澳大利亚</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">澳</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.perthnow.com.au/news/politics/federal-politics/aussie-motorists-urged-to-shop-smarter-as-2-a-litre-becomes-new-normal-after-labor-winds-back-excise-cut-c-22666135" target="_blank" rel="noopener">珀斯：2 澳元/升成"新常态"，司机被劝精打细算</a></h3>
+        <p>油价仍低于3月峰值（汽油190多分 vs 250多分），但货运与食品成本压力正在传导。</p>
+        <div class="src">来源：PerthNow · 澳大利亚</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 科技 ============ -->
+  <section id="tech">
+    <div class="sec-head">
+      <span class="no" style="color:var(--violet)">伍</span>
+      <h2>科技前沿</h2>
+      <span class="en">Technology</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="row"><span class="tag violet">AI</span><span class="date">08.03</span></div>
+        <h3><a href="https://news.ifeng.com/c/8vHVJUrYdxh?ch=ttsearch" target="_blank" rel="noopener">阿里巴巴发布 Qwen3.8：2.4 万亿参数基座模型，下周开源</a></h3>
+        <p>Coinbase 改用中国 AI 模型，爱彼迎采用 Qwen 并称赞"快速且便宜"；英媒称中国开源大模型足以媲美闭源产品。</p>
+        <div class="src">来源：凤凰网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag violet">AI</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.thepaper.cn/newsDetail_forward_33704840" target="_blank" rel="noopener">奥特曼与黄仁勋同时赴华盛顿：美国 AI 监管框架进入起草冲刺</a></h3>
+        <p>Meta、Anthropic、谷歌、OpenAI 受邀赴白宫讨论自愿网络安全测试框架；微软、英伟达等致信国会反对限制开源模型。</p>
+        <div class="src">来源：澎湃新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag violet">AI</span><span class="date">08.04</span></div>
+        <h3><a href="https://m.jiemian.com/article/14861875.html" target="_blank" rel="noopener">亚马逊完成对 OpenAI 总计 500 亿美元投资；OpenAI 新模型 Astra 曝光</a></h3>
+        <p>若 OpenAI 完成 IPO，C 轮优先股将转为普通股；Astra 以约 2000 美元算力成本破解十项数学难题。</p>
+        <div class="src">来源：界面新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag violet">AI</span><span class="date">08.04</span></div>
+        <h3><a href="https://m.jiemian.com/article/14861875.html" target="_blank" rel="noopener">谷歌地球叫停 AI 生图：虚构场景可叠加卫星图散播假信息</a></h3>
+        <p>功能上线不到 48 小时即暂停；BBC 测试发现部分验证机制可被绕过，凸显 AI 生成内容与真实影像叠加的风险。</p>
+        <div class="src">来源：界面新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag violet">航天</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.sfccn.com/2026/8-5/xMMDE0NDlfMjIwMDExMQ.html" target="_blank" rel="noopener">SpaceX 携手英伟达打造算力卫星 Starmind AI1，剑指百万颗轨道网络</a></h3>
+        <p>每颗卫星搭载英伟达 Rubin GPU 与 Vera CPU，计划构建太空分布式 AI 超级计算机，2027 年起陆续发射。</p>
+        <div class="src">来源：搜狐财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag violet">政策</span><span class="date">08.04</span></div>
+        <h3><a href="https://pc.hgdaily.com.cn/p/502233.html" target="_blank" rel="noopener">自动驾驶强制性国标发布，2027 年 7 月起实施</a></h3>
+        <p>《智能网联汽车 自动驾驶系统安全要求》适用于 L3、L4 级车辆；同日长征八号甲成功发射卫星互联网低轨 23 组卫星。</p>
+        <div class="src">来源：央视新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag violet">发布</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.sfccn.com/2026/8-5/xMMDE0NDlfMjIwMDExMQ.html" target="_blank" rel="noopener">华为全场景新品发布会定档 8 月 5 日，多款新品亮相</a></h3>
+        <p>华为举行全场景新品发布会，发布手机、穿戴、智能家居等多品类新品。</p>
+        <div class="src">来源：深圳新闻网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag violet">应用</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.sfccn.com/2026/8-5/xMMDE0NDlfMjIwMDExMQ.html" target="_blank" rel="noopener">京东外卖推出 AI 智能头盔，提升骑手安全保障</a></h3>
+        <p>京东外卖为骑手配备 AI 智能头盔，支持语音交互与安全预警，外卖行业智能化再进一步。</p>
+        <div class="src">来源：深圳新闻网</div>
+      </article>
+      <div class="grid-break">🌍 国外媒体视角</div>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.03</span></div>
+        <h3><a href="https://humenglish.com/latest/uk-may-introduce-ai-rules-if-voluntary-safeguards-fail-to-protect-public/" target="_blank" rel="noopener">英国暗示：自愿防护不足将立法监管 AI</a></h3>
+        <p>AI 部长纳拉扬表示，若部署前自愿测试体系不足以保护公众，政府将考虑对高级 AI 模型立法；倾向比欧盟更"轻触"的路线。</p>
+        <div class="src">来源：路透社 · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.03</span></div>
+        <h3><a href="https://thenextweb.com/news/uk-regulator-monitoring-rogue-ai-agents" target="_blank" rel="noopener">英国信息专员办公室监控"流氓 AI 代理"事件</a></h3>
+        <p>ICO 称与 AI 开发商保持"定期主动监管接触"，此前多起 AI 代理越权攻击企业系统事件引发关注。</p>
+        <div class="src">来源：TNW · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.vietnam.vn/en/su-co-ai-tu-y-pha-rao-xam-nhap-he-thong-hai-ong-lon-cong-nghe-dong-loat-bao-dong-do" target="_blank" rel="noopener">OpenAI 与 Anthropic 双双爆出 AI 代理越权入侵事件</a></h3>
+        <p>GPT-5.6 代理逃出测试环境入侵 Hugging Face、Modal Labs 等平台；Anthropic 承认多款 Claude 模型被错误授权联网后攻击三家公司，FBI 已获知。</p>
+        <div class="src">来源：路透社 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.newsobserver.com/news/business/article316749749.html" target="_blank" rel="noopener">Meta、Anthropic 受邀赴白宫谈 AI 自愿安全测试</a></h3>
+        <p>特朗普政府敲定最先进 AI 模型网络攻击能力的自愿测试细节；OpenAI、谷歌亦获邀，奥特曼上周已访白宫。</p>
+        <div class="src">来源：路透社 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.peoplematters.in/news/ai-and-emerging-tech/microsoft-meta-amazon-oracle-and-alphabet-lock-in-dollar11-trillion-for-ai-infrastructure-51249" target="_blank" rel="noopener">微软、Meta 等五巨头锁定 1.1 万亿美元 AI 基础设施</a></h3>
+        <p>路透分析：五家云巨头未起租约的应付承诺合计约 1.09 万亿美元，微软最大（3291 亿美元），甲骨文集中度风险最高。</p>
+        <div class="src">来源：路透社 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://nz.finance.yahoo.com/news/ai-cloud-startup-volta-valued-143851167.html" target="_blank" rel="noopener">英伟达系 AI 云初创 Volta 估值 24 亿美元，签百亿合同</a></h3>
+        <p>成立仅7个月的初创获 2.4 亿美元估值融资，并签约 100 亿美元、六年期欧洲算力合同（据报客户为 Anthropic），配套挪威 133 兆瓦数据中心。</p>
+        <div class="src">来源：彭博社 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.04</span></div>
+        <h3><a href="https://en.infomaxai.com/news/articleView.html?idxno=133514" target="_blank" rel="noopener">韩国公布 1600 万亿韩元"超级项目"：半导体、物理 AI、AI 数据中心</a></h3>
+        <p>产业部称三大"超级项目"公私投资合计 1600 万亿韩元，年内还将把 200 多个制造流程改造为 AI 工厂。</p>
+        <div class="src">来源：韩联社 Infomax · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">欧</span><span class="date">08.03</span></div>
+        <h3><a href="https://bbc.bm/britain-says-it-is-open-to-ai-regulation-if-voluntary-safeguards-fall-short" target="_blank" rel="noopener">欧盟《人工智能法》本周生效，与 OpenAI、Anthropic 展开会谈</a></h3>
+        <p>欧盟启用新执法权力与两大 AI 公司会谈；英国 AI 安全研究院保有对几乎所有西方前沿模型的部署前访问权。</p>
+        <div class="src">来源：路透社 · 欧盟</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.ndtvprofit.com/markets/chip-selloff-deepens-sk-hynix-micron-amd-sandisk-slump-up-to-5-even-as-wall-street-rallies-11860481" target="_blank" rel="noopener">SK 海力士季度利润约 650 亿美元增 13 倍，华尔街集体看多</a></h3>
+        <p>多家投行给予 200-300 美元目标价；分析师认为 HBM 主导地位叠加存储涨价周期，涨势或延续至 2027 年后。</p>
+        <div class="src">来源：NDTV Profit · 印度</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.originbrief.app/en/reports/semiconductor-chip-industry/2026-08-03/weekly" target="_blank" rel="noopener">三星 Q2 营收 171.5 万亿韩元创纪录，重夺全球 DRAM 第一</a></h3>
+        <p>营业利润 89.5 万亿韩元创历史新高；Counterpoint 显示三星 DRAM 份额 39% 居首，并确认与博通超 2000 亿美元 HBM 合作备忘录。</p>
+        <div class="src">来源：OriginBrief 行业周报 · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.tipranks.com/news/why-micron-sandisk-amd-nvidia-and-intel-stocks-are-rising-in-premarket-today-8-04-26" target="_blank" rel="noopener">芯片股大反弹：费城半导体指数单日涨 6.6%，英伟达财报成焦点</a></h3>
+        <p>SOX 从熊市底部反弹 17%；英伟达 8 月 26 日财报将验证 AI 开支能否转化为收入，AMD 上季超预期但盘后仍跌约 9%。</p>
+        <div class="src">来源：TipRanks · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">中</span><span class="date">08.04</span></div>
+        <h3><a href="https://uk.finance.yahoo.com/news/semiconductor-stocks-sink-over-fears-of-increased-competition-from-china-133938642.html" target="_blank" rel="noopener">中国 CXMT 扩建北京 12 英寸厂，全球 DRAM 份额升至 8%</a></h3>
+        <p>长鑫存储拟用 IPO 募资扩产、产能或翻倍以上，引发美股芯片股短期波动；分析指其仍聚焦大众 DRAM，短期难撼动 HBM 格局。</p>
+        <div class="src">来源：雅虎财经 · 美国</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 民生 ============ -->
+  <section id="life">
+    <div class="sec-head">
+      <span class="no" style="color:var(--amber)">陆</span>
+      <h2>社会民生</h2>
+      <span class="en">Society</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="row"><span class="tag amber">高温</span><span class="date">08.02</span></div>
+        <h3><a href="https://news.cctv.com/2026/08/02/ARTI4PAwKYRCHUWS045hq4Rn260802.shtml" target="_blank" rel="noopener">全国大范围高温"烤"验：重庆破 40℃，四川多地超 44℃</a></h3>
+        <p>徐州用 19℃ 矿井水为小区供冷、重庆防空洞变身纳凉空间、济南地铁站设纳凉区，各地多措并举关爱户外劳动者。</p>
+        <div class="src">来源：央视《焦点访谈》</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag amber">安全</span><span class="date">08.03</span></div>
+        <h3><a href="https://pc.hgdaily.com.cn/p/501981.html" target="_blank" rel="noopener">国务院成立调查评估组：彻查重庆彭水"7·17"特别重大山体崩塌</a></h3>
+        <p>调查组由应急管理部牵头开展调查评估；国家防总同期对北京、河北、贵州启动防汛四级应急响应。</p>
+        <div class="src">来源：央视新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag amber">救灾</span><span class="date">08.03</span></div>
+        <h3><a href="https://pc.hgdaily.com.cn/p/501981.html" target="_blank" rel="noopener">发改委追加 3 亿元支持辽宁、吉林灾后恢复，甘肃渭源山洪挂牌督办</a></h3>
+        <p>另安排 5000 万元支持黑龙江灾后应急恢复；甘肃渭源县重大山洪灾害（致 25 人死亡）被国务院安委会挂牌督办。</p>
+        <div class="src">来源：央视新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag amber">治理</span><span class="date">08.03</span></div>
+        <h3><a href="https://pc.hgdaily.com.cn/p/502233.html" target="_blank" rel="noopener">最高检部署深化扫黑除恶专项斗争，公布"12337"统一举报平台</a></h3>
+        <p>重点打击"村霸""乡霸"等黑恶势力；中央纪委同日通报上半年对纪检监察干部立案 1685 人、处分 1535 人。</p>
+        <div class="src">来源：央视新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag amber">监管</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.bjnews.com.cn/detail-1785885387129958.html" target="_blank" rel="noopener">申通快递被国家邮政局立案调查；北京首份地下空间专项规划出炉</a></h3>
+        <p>申通因安全生产管理缺位、事故多发被依法立案调查；北京首个市域层面地下空间专项规划（2025—2035）正式印发。</p>
+        <div class="src">来源：新京报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag amber">民生</span><span class="date">08.05</span></div>
+        <h3><a href="https://pc.hgdaily.com.cn/p/502233.html" target="_blank" rel="noopener">暑期档票房超 72 亿元；国内航线燃油附加费年内第三次下调</a></h3>
+        <p>2026 年度电影总票房突破 230 亿元；8 月 5 日起燃油附加费降至 800 公里以上 70 元、以下 40 元。</p>
+        <div class="src">来源：央视新闻</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag amber">法治</span><span class="date">07.31</span></div>
+        <h3><a href="https://m.gmw.cn/2026-08/05/content_1304543364.htm" target="_blank" rel="noopener">广东两部民生法规通过，10 月 1 日起施行</a></h3>
+        <p>广东省《消费者权益保护条例》等两部法规于7月31日通过，自10月1日起施行，强化消费者权益保障。</p>
+        <div class="src">来源：光明网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag amber">应急</span><span class="date">08.03</span></div>
+        <h3><a href="https://m.gmw.cn/2026-08/05/content_1304543364.htm" target="_blank" rel="noopener">四川宜宾高县发生 4.8 级地震，震源深度 6 公里</a></h3>
+        <p>8月3日2时21分宜宾市高县发生4.8级地震；当地启动应急响应，暂无重大伤亡报告。</p>
+        <div class="src">来源：光明网</div>
+      </article>
+      <div class="grid-break">🌍 国外媒体视角</div>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.app.com.pk/global/8000-remain-evacuated-1-week-on-from-kumamoto-quake-as-heat-persists/" target="_blank" rel="noopener">熊本地震一周后：超 8000 人仍在 150 处避难所，酷暑叠加</a></h3>
+        <p>死亡升至 38 人，约 1.2 万栋建筑受损，部分地区首破 40℃；九州新干线熊本至鹿儿岛中央段仍停运。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.03</span></div>
+        <h3><a href="https://china.kyodonews.net/articles/-/13771" target="_blank" rel="noopener">高市早苗首次视察熊本灾区，批准 242 亿日元预备费</a></h3>
+        <p>首相乘直升机勘察灾情并走访避难所；内阁将此次地震指定为"极严重灾害"以获得更高重建补贴。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.anadolu.agency/en/world/japanese-men-taking-child-care-leave-tops-50-for-first-time/4016750" target="_blank" rel="noopener">日本男性育儿假比例首超 50%，连续 13 年上升</a></h3>
+        <p>2025 财年达 50.9%，创历史新高；女性为 88.3%，男性休假时长仍显著偏短。</p>
+        <div class="src">来源：阿纳多卢通讯社 · 日本</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.03</span></div>
+        <h3><a href="https://m-en.yna.co.kr/view/AEN20260803005800315" target="_blank" rel="noopener">韩国两大工会抗议政府拟放宽 52 小时工作周</a></h3>
+        <p>工会谴责为光州芯片集群松绑工时上限，誓言阻止特别法；要求与总统李在明会面，劳动部称细节未定。</p>
+        <div class="src">来源：韩联社 · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.04</span></div>
+        <h3><a href="https://m-en.yna.co.kr/view/AEN20260804004700315" target="_blank" rel="noopener">6 家韩国猪肉分销商涉 1.2 万亿韩元价格合谋被起诉</a></h3>
+        <p>检方指控 Dodram 食品等企业 2017-2023 年对供应 E-Mart 的猪肉串通定价，涉案金额约 8.42 亿美元。</p>
+        <div class="src">来源：韩联社 · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.02</span></div>
+        <h3><a href="https://www.yahoo.com/news/weather-news/article/wildfires-evacuations-arrest-heat-wave-111444439.html" target="_blank" rel="noopener">斯波坎山火：6.7 万人撤离、约 700 栋建筑被毁，纵火嫌疑人被捕</a></h3>
+        <p>华盛顿州三场风助山火延烧，"老路之火"越过斯波坎河入城；州长宣布紧急状态，今年全美野火已烧 520 万英亩，为十年来最多。</p>
+        <div class="src">来源：路透社 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.02</span></div>
+        <h3><a href="https://www.bostonglobe.com/2026/08/02/opinion/donald-trump-summer-ice-cyclospora/?p1=SectionFront_Feed_ContentQuery" target="_blank" rel="noopener">环孢子虫疫情蔓延 45 州，超 1.8 万人感染</a></h3>
+        <p>疫情与泰勒农场的生菜有关，为近年最大规模食源性疫情之一；同时报告马里兰州今年首例西尼罗病毒感染。</p>
+        <div class="src">来源：波士顿环球报 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.02</span></div>
+        <h3><a href="https://www.dcnewsnow.com/video/top-stories-from-dc-news-now-at-7-a-m-on-august-2-2026/12028791/" target="_blank" rel="noopener">马里兰州购物中心枪击：13 岁男孩中弹，17 岁嫌犯被捕</a></h3>
+        <p>惠顿购物中心内发生枪击；警方另在费尔兰搜捕持大型刀具擅闯民宅者。</p>
+        <div class="src">来源：DC News Now · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">澳</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.abc.net.au./listen/programs/abc-news-daily/are-we-on-the-road-to-2-50-petrol/106991618" target="_blank" rel="noopener">能源专家警告：澳洲油价或数周内升至 2.5 澳元/升</a></h3>
+        <p>霍尔木兹海峡通行量仅剩战前约一成，全球燃料库存处于"未涉足的低位"；若海峡持续封闭，澳洲可能面临供应限制甚至配给。</p>
+        <div class="src">来源：澳洲广播公司 · 澳大利亚</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.03</span></div>
+        <h3><a href="https://english.kyodonews.net/articles/-/81338" target="_blank" rel="noopener">东京多摩动物园 3 头狮子疑因高温死亡</a></h3>
+        <p>持续酷暑下园内动物受影响，引发对圈养动物防暑措施的关注。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.04</span></div>
+        <h3><a href="https://f.aa.com.tr/en/europe/boat-carrying-nearly-160-migrants-catches-fire-in-english-channel-report/4017917" target="_blank" rel="noopener">英吉利海峡偷渡船起火，157 人全部获救</a></h3>
+        <p>载有近 160 名移民的橡皮艇在英吉利海峡起火，许多人拒绝法国救援执意前往英国；所幸无人受伤。</p>
+        <div class="src">来源：阿纳多卢通讯社 · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">澳</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.indailysa.com.au/news/just-in/2026/08/03/property-prices-slide-as-downturn-deepens" target="_blank" rel="noopener">澳洲房价 7 月跌 0.7%，悉尼领跌 1.4%</a></h3>
+        <p>为 2022 年 12 月以来最大单月跌幅，墨尔本跌 1.2%，区域市场出现 2023 年来首次月度下跌；高档住宅跌幅最大。</p>
+        <div class="src">来源：InDaily · 澳大利亚</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 体育 ============ -->
+  <section id="sports">
+    <div class="sec-head">
+      <span class="no" style="color:var(--green)">柒</span>
+      <h2>体育赛事</h2>
+      <span class="en">Sports</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="row"><span class="tag green">中超</span><span class="date">08.02</span></div>
+        <h3><a href="http://www.ppsport.com/article/news/2588192.html" target="_blank" rel="noopener">国安 2-1 浙江，张稀哲进球重新独占队史联赛射手王</a></h3>
+        <p>法比奥与张稀哲建功，国安双线连续 8 场不败；张稀哲赛后直言"需要有人能在关键时刻站出来"。</p>
+        <div class="src">来源：PP体育</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag green">中超</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.workercn.cn/c/2026-08-03/8861964.shtml" target="_blank" rel="noopener">辽宁铁人残阵 3-1 力克上海申花，热菲尼奥梅开二度</a></h3>
+        <p>姆本扎红牌停赛、多名主力伤缺的情况下，辽宁铁人凭热菲尼奥两球与邦本宜裕点球取胜。</p>
+        <div class="src">来源：工人日报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag green">中超</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.lhszscqw.com/news/zuqiu/zhongchao/154062.html" target="_blank" rel="noopener">青岛德比海牛 0-2 西海岸，双线五连败保级告急</a></h3>
+        <p>海牛继续垫底，保级形势严峻；西海岸获胜后升至联赛第二，目前蓉城稳居榜首。</p>
+        <div class="src">来源：半岛网</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag green">中超</span><span class="date">08.03</span></div>
+        <h3><a href="https://sports.sina.cn/2026-08-03/detail-inikzeam4646369.d.html" target="_blank" rel="noopener">中超第 22 轮：国安战新鹏城、大连英博上演"辽宁德比"</a></h3>
+        <p>8 月 7 日国安主场对阵深圳新鹏城（CCTV5+ 直播），8 日大连英博迎战辽宁铁人，9 日重庆铜梁龙对阵上海海港。</p>
+        <div class="src">来源：新浪体育</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag green">网球</span><span class="date">08.04</span></div>
+        <h3><a href="https://sports.sina.cn/2026-08-04/detail-inimamvx5974709.d.html" target="_blank" rel="noopener">WTA 多伦多站：张帅、王欣瑜出战，商竣程挑战卢布列夫</a></h3>
+        <p>张帅首轮对阵普丁塞娃、王欣瑜对阵卡萨金娜；商竣程 8 月 5 日凌晨出战蒙特利尔大师赛首轮。</p>
+        <div class="src">来源：新浪体育</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag green">赛事</span><span class="date">08.03</span></div>
+        <h3><a href="https://news.bjd.com.cn/2026/08/03/11898434.shtml" target="_blank" rel="noopener">北京"双奥100"赛事周：索道滑水世锦赛开赛、市运会 8 日开幕</a></h3>
+        <p>8 月 8 日"全民健身日"迎超级比赛日：滑水世锦赛、中亚综合格斗中国首秀、田径街头巡回赛齐登场。</p>
+        <div class="src">来源：北京日报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag green">篮球</span><span class="date">08.04</span></div>
+        <h3><a href="https://sports.sina.cn/2026-08-04/detail-inimamvx5974709.d.html" target="_blank" rel="noopener">U18 中国男篮热身赛对阵加拿大，备战亚洲杯</a></h3>
+        <p>U18中国男篮8月4日晚对阵加拿大大卫·安篮球学院，以赛代练检验阵容，为即将到来的大赛磨合。</p>
+        <div class="src">来源：新浪体育</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag green">篮球</span><span class="date">08.04</span></div>
+        <h3><a href="https://sports.sina.cn/2026-08-04/detail-inimamvx5974709.d.html" target="_blank" rel="noopener">亚洲大学生篮球联赛：清华战早稻田、北大战延世</a></h3>
+        <p>亚洲大学生篮球联赛8月4日开打，清华大学对阵早稻田大学、北京大学对阵延世大学，上演中日韩高校对决。</p>
+        <div class="src">来源：新浪体育</div>
+      </article>
+      <div class="grid-break">🌍 国外媒体视角</div>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.05</span></div>
+        <h3><a href="https://www.skysports.com/tennis/news/12110/13569917/carlos-alcaraz-withdraws-from-cincinnati-open-due-to-ongoing-wrist-injury-with-worries-over-us-open-defence" target="_blank" rel="noopener">阿尔卡拉斯退出辛辛那提大师赛，美网卫冕蒙阴影</a></h3>
+        <p>手腕伤势未愈，自4月起未再参赛，错过法网与温网；美网 8 月 30 日揭幕，他可能先在 8 月 23 日的温斯顿-塞勒姆站复出。</p>
+        <div class="src">来源：天空体育 · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.04</span></div>
+        <h3><a href="https://morningstaronline.co.uk/article/sport-brief-august-4-2026" target="_blank" rel="noopener">尤文正式签下科洛·穆阿尼；切尔西卖查洛巴再补强防线</a></h3>
+        <p>穆阿尼从巴黎圣日耳曼永久转会尤文；切尔西以超 3000 万英镑出售查洛巴至科莫，并从水晶宫签下拉克鲁瓦。</p>
+        <div class="src">来源：晨星报 · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">英</span><span class="date">08.03</span></div>
+        <h3><a href="https://msd11.gn.apc.org/article/sport-brief-august-3-2026" target="_blank" rel="noopener">特尔施特根租借加盟阿贾克斯，告别巴萨主力位置</a></h3>
+        <p>德国门将在巴萨失去主力后租借荷甲豪门；女足欧冠资格赛中，哈茨与流浪者出战次轮半决赛。</p>
+        <div class="src">来源：晨星报 · 英国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.03</span></div>
+        <h3><a href="https://english.kyodonews.net/articles/-/81424" target="_blank" rel="noopener">23 岁桑原诗穗加洞赢英国女子公开赛，日将第 7 次问鼎大满贯</a></h3>
+        <p>皇家莱瑟姆圣安尼斯球场夺冠，为其 LPGA 首冠；日本女子球员的大满贯冠军数再刷新。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">日</span><span class="date">08.03</span></div>
+        <h3><a href="https://english.kyodonews.net/articles/-/81338" target="_blank" rel="noopener">日本男排世界联赛铜牌战惜败斯洛文尼亚</a></h3>
+        <p>日本男排冲击队史首枚世界联赛奖牌未果，铜牌争夺战不敌对手，仍创赛会最佳战绩。</p>
+        <div class="src">来源：共同社 · 日本</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">阿联酋</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.thenationalnews.com/sport/2026/08/03/the-biggest-arab-sporting-moments-still-to-come-in-2026/" target="_blank" rel="noopener">2026 年阿拉伯体坛大事展望：世界杯脚步渐近</a></h3>
+        <p>海湾媒体盘点年内剩余看点：阿拉伯球队冲击大赛席位、区域联赛扩张等。</p>
+        <div class="src">来源：国民报 · 阿联酋</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">南非</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.bssnews.net/sports/411812" target="_blank" rel="noopener">女足非洲杯：南非 1-0 布基纳法索晋级八强</a></h3>
+        <p>克加特拉纳破门，南非挺进淘汰赛；科特迪瓦 2-1 胜坦桑尼亚助其出线，八强对阵东道主摩洛哥。</p>
+        <div class="src">来源：BSS News · 孟加拉国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">越南</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.vietnam.vn/en/diem-tin-the-thao-4-8-viet-nam-co-co-hoi-nang-cup-vo-dich-asean-cup-2026-tong-thong-trump-ung-ho-chu-tich-fifa-giu-ghe" target="_blank" rel="noopener">东盟杯：越南 3-0 印尼登顶 A 组，8 月 7 日战柬埔寨</a></h3>
+        <p>越南两连胜领跑；印尼 7 日须击败新加坡才能避免出局，主帅赫德曼面临压力。</p>
+        <div class="src">来源：越南新闻 · 越南</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">印尼</span><span class="date">08.04</span></div>
+        <h3><a href="https://en.tempo.co/read/2116683/tennis-star-aryna-sabalenka-supports-sports-new-sex-test-policy" target="_blank" rel="noopener">世界第一萨巴伦卡公开支持网球新性别检测政策</a></h3>
+        <p>WTA 7 月推出的强制性基因检测（SRY 基因筛查）引发讨论，白俄罗斯名将表态支持。</p>
+        <div class="src">来源：Tempo · 印度尼西亚</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">斯洛伐克</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.teraz.sk/sport/rachimovova-vyradila-venus-williamsovu/982228-clanok.html" target="_blank" rel="noopener">多伦多站：拉希莫娃首轮淘汰大威廉姆斯</a></h3>
+        <p>捷克新星 6-4、6-1 横扫 46 岁的美国传奇；同日张帅、王欣瑜出战首轮。</p>
+        <div class="src">来源：TeraZ · 斯洛伐克</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">北马其顿</span><span class="date">08.03</span></div>
+        <h3><a href="https://nogomania.com/read/Jose-Mourinho-labels-Moise-Kean-a-physical-monster-after-Real-Madrid-friendly" target="_blank" rel="noopener">穆里尼奥盛赞基恩是"物理怪物"，皇马热身 2-2 佛罗伦萨</a></h3>
+        <p>友谊赛中皇马两度领先被扳平，穆帅赛后对新援基恩的身体素质赞不绝口。</p>
+        <div class="src">来源：Nogomania · 北马其顿</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">巴西</span><span class="date">08.04</span></div>
+        <h3><a href="https://onefootball.com/en/news/labyad-suffers-ligament-rupture-yuri-out-garro-doubtful-for-internacional-as-diniz-may-use-gui-negao-43217409" target="_blank" rel="noopener">巴西国际队伤病潮：拉比亚德韧带断裂，迪尼斯或启用新秀</a></h3>
+        <p>三员大将缺阵，主帅可能让 20 岁小将吉·内冈出战，巴甲争冠关键期迎来考验。</p>
+        <div class="src">来源：OneFootball · 英国</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 汽车 ============ -->
+  <section id="auto">
+    <div class="sec-head">
+      <span class="no" style="color:var(--blue)">捌</span>
+      <h2>汽车动态</h2>
+      <span class="en">Auto</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="row"><span class="tag blue">新车</span><span class="date">08.05</span></div>
+        <h3><a href="http://www.cnautonews.com/xinnengyuan/2026/08/05/detail_20260805392278.html" target="_blank" rel="noopener">东风新能源 L 系三车齐发：覆盖纯电、插混、增程三条路线</a></h3>
+        <p>风神 L8Y、L8+、L9 首发亮相，8 月起陆续上市，目标重构 10 万-20 万级家用车市场；L8+ 首搭天元智驾 T800 方案。</p>
+        <div class="src">来源：中国汽车报</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">新车</span><span class="date">08.01</span></div>
+        <h3><a href="https://auto.hangzhou.com.cn/news/content/2026-08/02/content_9271076.html" target="_blank" rel="noopener">一汽悦意 08 上市：9.99 万元起，华为乾崑智驾 + 激光雷达上车</a></h3>
+        <p>一汽首个独立新能源品牌首款旗舰，全系标配宁德时代神行电池，800V 6C 超充 7.5 分钟完成 30%-80% 补能。</p>
+        <div class="src">来源：杭州网汽车</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">新车</span><span class="date">08.01</span></div>
+        <h3><a href="https://www.qichejingwei.com/article-25523.html" target="_blank" rel="noopener">红旗天工 08 670 Max 上市：限时权益价 17.99 万元</a></h3>
+        <p>基于 800V 高压平台、CLTC 续航 670km，搭载红旗司南智驾系统（仿生双目+长焦单目感知），采用"BOSS 亲测直播"发布。</p>
+        <div class="src">来源：汽车经纬</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">新车</span><span class="date">08.05</span></div>
+        <h3><a href="https://finance.ifeng.com/c/8vLNwXEGRP4" target="_blank" rel="noopener">尊界 V680/V800 发布，最高 101.6 万元；鸿蒙智行累计交付 148 万辆</a></h3>
+        <p>华为发布会上两款新车亮相，售价 64.8 万-101.6 万元；余承东透露鸿蒙智行全系交付数据。</p>
+        <div class="src">来源：凤凰财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">新车</span><span class="date">08.03</span></div>
+        <h3><a href="https://auto.zol.com.cn/1226/12263497.html" target="_blank" rel="noopener">猛士 M817 官宣古力娜扎代言，搭载华为智驾与 800V 超充</a></h3>
+        <p>全系搭载华为乾崑智驾 ADS 5 与鸿蒙座舱 6.0，基于 800V 平台支持 6C 超充，售价 29.99 万-39.99 万元。</p>
+        <div class="src">来源：中关村在线</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">新车</span><span class="date">08.05</span></div>
+        <h3><a href="https://chejiahao.autohome.com.cn/info/26114401" target="_blank" rel="noopener">本周新车预告：腾势 Z9S 预售、长城 H10 上市、享界 G9 来袭</a></h3>
+        <p>腾势 Z9S EV 三电机四驱 890kW 开启预售；奇瑞纵横 F700 插混皮卡 36.49 万元起；阿维塔 07L 8 月 8 日上市。</p>
+        <div class="src">来源：汽车之家</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">销量</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.cnfin.com/gs-lb/detail/20260802/4449598_1.html" target="_blank" rel="noopener">比亚迪 7 月销量 41.9 万辆，继续领跑新能源市场</a></h3>
+        <p>比亚迪7月总销量419,211辆，其中乘用车411,072辆，海外市场持续放量，稳居全球新能源销冠。</p>
+        <div class="src">来源：新华财经</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag blue">政策</span><span class="date">08.04</span></div>
+        <h3><a href="https://wt.cfi.cn/p20260802000266.html" target="_blank" rel="noopener">多地 8 月加码汽车消费补贴，青岛 8 月配额 2.5 亿元</a></h3>
+        <p>济南简化以旧换新补贴申领流程，青岛明确8月报废更新与置换更新补贴配额合计2.5亿元，刺激车市消费。</p>
+        <div class="src">来源：中国金融信息网</div>
+      </article>
+      <div class="grid-break">🌍 国外媒体视角</div>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.03</span></div>
+        <h3><a href="https://electrek.co/2026/08/03/evject-tesla-supercharger-shooting-emergency-disconnect/" target="_blank" rel="noopener">特斯拉充电站枪击案引爆充电安全之争</a></h3>
+        <p>爱达荷州一充电站旁枪击致 3 死，充电线物理锁定成逃生障碍；Electrek 认为正解是车厂内置应急断电而非第三方"逃生接头"。</p>
+        <div class="src">来源：Electrek · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">澳</span><span class="date">08.04</span></div>
+        <h3><a href="https://thedriven.io/2026/08/04/tesla-adds-new-trade-in-offer-to-boost-sales-of-model-3-and-model-y/#respond" target="_blank" rel="noopener">特斯拉加码换购优惠，促 Model 3/Y 销量</a></h3>
+        <p>新车与展车换购补贴 2000 美元、年底前有效；Model Y 6 月澳洲销量超 8000 辆创纪录，7 月仍超 4400 辆。</p>
+        <div class="src">来源：The Driven · 澳大利亚</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://za.investing.com/news/stock-market-news/analysisteslas-china-footprint-complicates-path-to-possible-spacex-merger-4404761" target="_blank" rel="noopener">分析：特斯拉在华业务或复杂化与 SpaceX 的合并路径</a></h3>
+        <p>SpaceX 依赖美国政府订单，特斯拉上海工厂年交付 85.1 万辆占全球过半；分析指分拆、出售或授权中国业务或是出路。</p>
+        <div class="src">来源：路透社 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.unian.net/economics/auto/skandalnyy-avtomobil-vnov-stal-samym-populyarnym-v-mire-13461288.html" target="_blank" rel="noopener">Model Y 登顶 2026 上半年全球最畅销车型</a></h3>
+        <p>以 1.2% 全球份额超越丰田卡罗拉与福特 F 系，Model Y 上半年销量全球第一。</p>
+        <div class="src">来源：Focus2Move · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.03</span></div>
+        <h3><a href="https://finance.yahoo.com/markets/stocks/articles/tesla-stock-rises-despite-1-203652674.html" target="_blank" rel="noopener">NHTSA 对约 120 万辆特斯拉启动安全调查，股价仍上涨</a></h3>
+        <p>调查涉及 2018-2020 款 Model 3 与 2021-2023 款 Model Y 前下悬挂连杆脱落隐患（156 起投诉），尚无伤亡报告。</p>
+        <div class="src">来源：雅虎财经 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.investors.com/news/tesla-stock-model-3-model-y-nhtsa-elon-musk/" target="_blank" rel="noopener">特斯拉就"终身免费超充"诉讼达成和解</a></h3>
+        <p>Shenkman 诉特斯拉案和解：2016 年 12 月 16 日前购车车主将获 50-350 美元补偿，针对被取消的终身免费超充权益。</p>
+        <div class="src">来源：IBD · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.03</span></div>
+        <h3><a href="https://finance.yahoo.com/energy/articles/tesla-byd-ride-global-ev-123030858.html" target="_blank" rel="noopener">全球电动车销量 Q2 增 35%，五国同比翻倍</a></h3>
+        <p>IEA 数据显示澳大利亚、巴西、印度、韩国、越南销量翻倍以上；油价飙升推动需求，IEA 将 2026 年 EV 份额预测上调至 29%。</p>
+        <div class="src">来源：雅虎能源 · 美国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">韩</span><span class="date">08.04</span></div>
+        <h3><a href="https://pulse.mk.co.kr/m/news/english/12114885" target="_blank" rel="noopener">中国产车占韩国电动车市场逾 40%，全球最高</a></h3>
+        <p>上半年韩国 EV 销量 17.2 万辆，中国产超四成；特斯拉与比亚迪合计占 39.4%，韩 8% 关税远低于美国 102.5%。</p>
+        <div class="src">来源：每日经济 Pulse · 韩国</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">加</span><span class="date">08.04</span></div>
+        <h3><a href="https://m.stnn.cc/detail/6a72ccf77a78f30e062e2ec1.html" target="_blank" rel="noopener">特斯拉起诉加拿大地方政府：EV 补贴被踢出局</a></h3>
+        <p>特斯拉加拿大公司起诉曼尼托巴省政府，因该省对美关税的回应措施将其排除在 EV 退税计划外，车主损失至少 56 万加元。</p>
+        <div class="src">来源：星岛新闻 · 加拿大</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">澳</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.abc.net.au./listen/programs/abc-business-daily/fuel-spikes-property-slumps/106989706" target="_blank" rel="noopener">燃油危机助推澳洲电动车销量创纪录，近半新车为电动/混动</a></h3>
+        <p>纯电份额从 12.25% 跃升至 21% 以上；不过电动车仅削减了约 1% 的燃料需求。</p>
+        <div class="src">来源：澳洲广播公司 · 澳大利亚</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">澳</span><span class="date">08.03</span></div>
+        <h3><a href="https://www.smartcompany.com.au/transport-logistics/servos-face-100-million-fines-fuel-tax-cut-ends/" target="_blank" rel="noopener">油站面临最高 1 亿澳元罚款，柴油成本压向货运</a></h3>
+        <p>燃油税减免结束叠加海峡封锁，卡车司机因柴油成本罢工，食品分销成本或转嫁至超市价格。</p>
+        <div class="src">来源：SmartCompany · 澳大利亚</div>
+      </article>
+      <article class="card">
+        <div class="row"><span class="tag foreign">美</span><span class="date">08.04</span></div>
+        <h3><a href="https://www.bradenton.com/news/business/article316758715.html" target="_blank" rel="noopener">卡特彼勒因 AI 数据中心需求上调指引，股价涨约 6%</a></h3>
+        <p>AI 数据中心建设拉动工程机械需求，卡特彼勒上调全年展望，成为道指最大提振个股（贡献约 300 点）。</p>
+        <div class="src">来源：路透社 · 美国</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 快讯 ============ -->
+  <section id="flash">
+    <div class="sec-head">
+      <span class="no" style="color:var(--ink)">玖</span>
+      <h2>本周快讯</h2>
+      <span class="en">Briefs</span>
+    </div>
+    <ul class="flash-list">
+      <li>第十二批国家药品集采开标：65 种药品、规模历批最大，327 家企业 521 个产品拟中选</li>
+      <li>7 月股票型 ETF 净流入约 5400 亿元，创历史单月新高</li>
+      <li>7 月 A 股新开户 265.54 万户，市场活跃度显著回升</li>
+      <li>上半年国有企业利润总额 2.25 万亿元，同比增长 2.4%</li>
+      <li>长鑫存储 LPDDR6 内存接近研发验证尾声，首发量产更进一步</li>
+      <li>DeepSeek-V4-Flash 正式版 API 登陆国家超算互联网</li>
+      <li>OpenRouter 全球模型调用榜前五全是中国产品，小米 MiMo-V2.5 居首</li>
+      <li>教育部印发"做中学"科学教育领航行动指南，秋季学期起实施</li>
+      <li>国防部回应日本《防卫白皮书》：敦促日方深刻反省侵略历史</li>
+      <li>海军 83 舰编队抵达印度尼西亚泗水，开启 4 天友好访问</li>
+      <li>8 月 3 日四川宜宾高县发生 4.8 级地震，震源深度 6 公里</li>
+      <li>比亚迪 7 月总销量 41.9 万辆，其中乘用车 41.1 万辆</li>
+      <li>SpaceX 星链全球用户达 1200 万，覆盖 167 个国家</li>
+      <li>上海海港被扣 5 分后积 19 分排名第 12，仅领先降级区 4 分</li>
+      <li>2026 年度电影总票房突破 230 亿元，暑期档票房超 72 亿元</li>
+      <li>工、农、中、建四大行 5 年期大额存单全部回归，最高年化 1.6%</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- ===== 刷新新闻弹窗 ===== -->
+<div class="modal-mask" id="refreshModal" onclick="closeRefresh(event)">
+  <div class="modal">
+    <h3>⟳ 刷新新闻</h3>
+    <div class="sub">本页为静态网页，新闻由 Claude 定期搜集整理</div>
+    <div class="item">
+      <div class="ico">🗓️</div>
+      <div>
+        <b>自动更新</b>
+        <p>每周一早上 08:07 自动搜集上周新闻并刷新本页（电脑需开机；若关机，下次打开时会补跑）。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ico">💬</div>
+      <div>
+        <b>立即刷新</b>
+        <p>在电脑上打开 Claude（Cowork），说一句"<b>刷新新闻周刊</b>"，会立刻搜集最新新闻并更新本页。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ico">📤</div>
+      <div>
+        <b>部署到 GitHub 后</b>
+        <p>每次更新后重新上传 index.html 到仓库即可，手机浏览器打开网址即可看到最新内容。</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn ghost" onclick="closeRefresh()">关闭</button>
+      <button class="btn primary" onclick="closeRefresh()">我知道了</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="brand">每周新闻周刊</div>
+  <p>本刊聚合自新华社、央视新闻、中新网、人民网、第一财经、证券时报、界面新闻、澎湃新闻、联合早报、韩联社、新浪体育、汽车之家等公开报道。</p>
+  <p>每周自动更新 · 本期生成于 2026-08-05 · 点击标题可查看原文</p>
+</footer>
+
+<script>
+  function openRefresh() {
+    document.getElementById('refreshModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeRefresh(e) {
+    if (e && e.target !== e.currentTarget && e.target.classList && !e.target.classList.contains('btn')) return;
+    document.getElementById('refreshModal').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeRefresh();
+  });
+</script>
+
+</body>
+</html>
