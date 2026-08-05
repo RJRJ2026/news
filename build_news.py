@@ -63,12 +63,9 @@ TAGS = {'world':'国际','mil':'军事','finance':'财经','tech':'科技','life
 def esc(s): return H.escape(s)
 
 def card(sec, item, tag=None):
-    label = tag or TAGS[sec]
-    color = ('foreign' if item['foreign'] else 'red' if sec=='mil' else 'blue' if sec in ('world','auto') else 'teal' if sec=='finance' else 'violet' if sec=='tech' else 'amber' if sec=='life' else 'green')
     return f'''      <article class="card">
-        <div class="row"><span class="tag {color}">{label}</span><span class="date">{item['date'].strftime('%m.%d')}</span></div>
         <h3><a href="{esc(item['link'])}" target="_blank" rel="noopener">{esc(item['title'])}</a></h3>
-        <div class="src">来源：{esc(item['src'])}</div>
+        <div class="src"><span class="d">{item['date'].strftime('%m.%d')}</span> · 来源：{esc(item['src'])}</div>
       </article>'''
 
 CN_NUM = '一二三四五六七八九十'
@@ -140,9 +137,8 @@ def build():
         hero += '\n  </div>'
 
     top_cards = ''.join(f'''      <article class="card">
-        <div class="row"><span class="tag red">头条</span><span class="date">{n["date"].strftime("%m.%d")}</span></div>
         <h3><a href="{esc(n["link"])}" target="_blank" rel="noopener">{esc(n["title"])}</a></h3>
-        <div class="src">来源：{esc(n["src"])}</div>
+        <div class="src"><span class="d">{n["date"].strftime("%m.%d")}</span> · 来源：{esc(n["src"])}</div>
       </article>
 ''' for n in top4)
 
@@ -237,6 +233,7 @@ def build():
   .card h3 a:hover {{ color: var(--red); }}
   .card p {{ font-size: 12.5px; color: var(--ink-2); flex: 1; line-height: 1.55; }}
   .card .src {{ font-size: 11px; color: var(--ink-3); border-top: 1px dashed var(--line); padding-top: 8px; }}
+  .card .src .d {{ color: var(--ink-2); font-weight: 600; }}
   .flash-list {{ background: var(--card); border: 1px solid var(--line); border-radius: 12px;
     padding: 18px 22px; columns: 3; column-gap: 32px; }}
   @media (max-width: 900px) {{ .flash-list {{ columns: 2; }} }}
